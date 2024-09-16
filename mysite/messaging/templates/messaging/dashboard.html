@@ -11,6 +11,31 @@
 <body>
     <h1>Messages</h1>
     <a href="{% url 'logout' %}">Log Out</a>
+    <a href="/rooms/profile">Edit Profile</a>
+
+
+
+
+
+
+    <div class="main">
+        {% for user in users %}
+        <div>
+            <a href="/rooms/room/{{user.id}}">Go to room</a>
+            <p>Username: {{ user.username }}</p>
+            <p>Bio: {{ user.profile.bio }}</p>
+            <p>Location: {{ user.profile.location }}</p>
+            <p>Phone Number: {{ user.profile.phone_number }}</p>
+            {% if user.profile.profile_pic_url %}
+            <img src="{{ user.profile.profile_pic_url }}" alt="Profile Picture" style="width: 100px; height: auto;"> {% else %}
+            <p>No profile picture available.</p>
+            {% endif %}
+            <hr/>
+        </div>
+        {% empty %}
+        <p>No users found.</p>
+        {% endfor %} {% include 'messaging/message_form_partial.html' %}
+    </div>
 </body>
 
 </html>

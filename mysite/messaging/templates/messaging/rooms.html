@@ -11,6 +11,12 @@
 <body>
     <h1>Welcome to rooms</h1>
     <a href="/rooms/signUp">Sign Up</a>
+    <div class="main">
+        {% for user in users %} {{ user.username }}<br/> {{ user.password }}<br/>
+        <hr/> {% empty %}
+        <p>No users found.</p>
+        {% endfor %}
+    </div>
 
 </body>
 
