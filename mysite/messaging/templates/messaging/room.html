@@ -14,6 +14,8 @@
         <div class="message">
             <strong>{{ message.sender.username }}:</strong>
             <p>{{ message.content }}</p>
+            <a href="{% url 'updateMsg' message.id %}">Edit</a>
+            <a href="{% url 'deleteMsg' message.id %}">Delete</a>
         </div>
         {% empty %}
         <p>No messages yet.</p>
@@ -21,10 +23,9 @@
     </div>
 
     <form method="POST" action="{% url 'message' user.id %}" enctype="multipart/form-data">
-        {% csrf_token %}
-
-        <label for="message">Type message here:</label>
-        <textarea id="message" name="message" rows="4" cols="50">{{ form.message.value }}</textarea>
+        {% csrf_token %} {{ form.as_p }}
+        <label for="content">Type message here:</label>
+        <textarea id="content" name="content" rows="4" cols="50">{{ form.message.value }}</textarea>
         <br><br>
 
         <input type="submit" value="Submit">

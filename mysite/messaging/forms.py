@@ -43,7 +43,4 @@ class MessageForm(forms.ModelForm):
         # specify model to be used
         model = Message
 
-        fields = [
-            "content",
-            "receiver"
-        ]
+        fields = ["content"]

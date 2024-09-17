@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from django.http import HttpResponse
 from django.template import loader
 from django.contrib.auth import get_user_model
@@ -7,7 +7,8 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.decorators import login_required
 from .forms import SignUpForm,LogInForm,ProfileForm,MessageForm
-from .models import Profile
+from django.db.models import Q
+from .models import Profile,Message
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
 def rooms(request):
@@ -63,6 +64,7 @@ def dashboard(request):
             user_profiles.append({
                 'username': user.username,
                 'password': user.password,
+                'id': user.id,
                 'profile': {
                     'bio': profile.bio,
                     'location': profile.location,
@@ -110,22 +112,49 @@ def profile(request):
 def room(request, user_id):
     user = get_object_or_404(User, id=user_id)
     current_user = request.user
+    print('user ' + str(user) + ' curr user ' + str(current_user) + 'msgs ' + str(Message.objects.all()))
     messages = Message.objects.filter(
         Q(sender=current_user, receiver=user) |
         Q(sender=user, receiver=current_user)
     ).order_by('timestamp')
     #find all messages where the sender is either the other user or you and the receiver is either the other user or you
-    return render(request, 'room.html', {'user': user,'messages':messages})
+    print('Messages:', messages)
+    return render(request, 'messaging/room.html', {'user': user,'messages':messages})
 
 @login_required
 def message(request,user_id):
+  msgs = Message.objects.all()
+  print(msgs)
   user = get_object_or_404(User, id=user_id)
   form = MessageForm(request.POST)
   if form.is_valid():
     message = form.save(commit=False)
+    print(f'req_user: {request.user}, user: {user}')
     message.sender = request.user
     message.receiver = user
+    print(f'Message saved: sender={message.sender}, receiver={message.receiver}, content={message.content}')
     message.save()
-    return redirect(f'/rooms/room/{user_id}')
+    return redirect('room', user_id=user_id)
+  else:
+    print(form.errors)
 
+def updateMsg(request,msg_id):
+  msg = get_object_or_404(Message, id=msg_id)
+  print(msg)
+  if request.method == 'POST':
+    form = MessageForm(request.POST,instance=msg)
+    if form.is_valid():
+      updated_message = form.save(commit=False)
+      if msg.receiver:
+        updated_message.receiver = msg.receiver
+      updated_message.save()
+      return redirect('/rooms/dashboard')
+  else:
+    form = MessageForm(instance=msg)
+  return render(request, 'messaging/edit_message.html', {'form': form, 'message': msg})
+
+def deleteMsg(request,msg_id):
+  msg = get_object_or_404(Message, id=msg_id)
+  msg.delete()
+  return redirect('room', user_id=msg.receiver.id)
 
