@@ -21,6 +21,31 @@
     </form>
 
     <script>
+        function showNotification(sender, content) {
+            // Create a notification element
+            const notification = document.createElement('div');
+            notification.className = 'notification';
+            notification.innerText = `${sender}: ${content}`;
+
+            // Style the notification
+            notification.style.position = 'fixed';
+            notification.style.bottom = '20px';
+            notification.style.right = '20px';
+            notification.style.backgroundColor = '#4CAF50';
+            notification.style.color = 'white';
+            notification.style.padding = '10px';
+            notification.style.borderRadius = '5px';
+            notification.style.zIndex = '1000';
+
+            // Append to body
+            document.body.appendChild(notification);
+
+            // Remove the notification after a few seconds
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
         const socket = new WebSocket('ws://127.0.0.1:8000/ws/some_path/');
 
         const receiverId = "{{ user.id }}"; // Get the logged-in user's ID
@@ -37,6 +62,7 @@
             console.log('data', data)
             messageDiv.innerHTML = `<strong>${data.sender_username}:</strong> <p>${data.content}</p>`;
             document.getElementById('messages').appendChild(messageDiv);
+            showNotification(data.sender_username, data.content);
         };
 
         socket.onclose = function(e) {
