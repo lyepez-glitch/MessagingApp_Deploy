@@ -1,15 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
 <body>
-    <div class="messages">
+    <div id="messages" class="messages">
         {% for message in messages %}
         <div class="message">
             <strong>{{ message.sender.username }}:</strong>
@@ -22,14 +12,47 @@
         {% endfor %}
     </div>
 
-    <form method="POST" action="{% url 'message' user.id %}" enctype="multipart/form-data">
+    <form id="messageForm" action="{% url 'message' user.id %}" enctype="multipart/form-data">
         {% csrf_token %} {{ form.as_p }}
         <label for="content">Type message here:</label>
         <textarea id="content" name="content" rows="4" cols="50">{{ form.message.value }}</textarea>
         <br><br>
-
         <input type="submit" value="Submit">
     </form>
-</body>
 
-</html>
+    <script>
+        const socket = new WebSocket('ws://localhost:8000/ws/some_path/');
+
+        socket.onopen = function(e) {
+            console.log("Connection established!");
+        };
+
+        socket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message';
+            console.log('data', data)
+            messageDiv.innerHTML = `<strong>${data.sender_username}:</strong> <p>${data.content}</p>`; // Display sender's username and content
+            document.getElementById('messages').appendChild(messageDiv);
+        };
+
+        socket.onclose = function(e) {
+            console.log("Connection closed!");
+        };
+
+        document.getElementById('messageForm').onsubmit = function(event) {
+            event.preventDefault(); // Prevent the default form submission
+            const messageContent = document.getElementById('content').value;
+            const receiverId = 'some_user_id'; // Replace with the actual receiver ID
+
+            // Send the message via WebSocket
+            socket.send(JSON.stringify({
+                'content': messageContent,
+                'receiver_id': receiverId // Send the 'receiver_id' key
+            }));
+
+            // Optionally clear the input field
+            document.getElementById('content').value = '';
+        };
+    </script>
+</body>
