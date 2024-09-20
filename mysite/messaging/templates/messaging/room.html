@@ -21,8 +21,11 @@
     </form>
 
     <script>
-        const socket = new WebSocket('ws://localhost:8000/ws/some_path/');
+        const socket = new WebSocket('ws://127.0.0.1:8000/ws/some_path/');
 
+        const receiverId = "{{ user.id }}"; // Get the logged-in user's ID
+
+        socket.withCredentials = true;
         socket.onopen = function(e) {
             console.log("Connection established!");
         };
@@ -32,7 +35,7 @@
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message';
             console.log('data', data)
-            messageDiv.innerHTML = `<strong>${data.sender_username}:</strong> <p>${data.content}</p>`; // Display sender's username and content
+            messageDiv.innerHTML = `<strong>${data.sender_username}:</strong> <p>${data.content}</p>`;
             document.getElementById('messages').appendChild(messageDiv);
         };
 
@@ -41,17 +44,15 @@
         };
 
         document.getElementById('messageForm').onsubmit = function(event) {
-            event.preventDefault(); // Prevent the default form submission
+            event.preventDefault();
             const messageContent = document.getElementById('content').value;
-            const receiverId = 'some_user_id'; // Replace with the actual receiver ID
 
             // Send the message via WebSocket
             socket.send(JSON.stringify({
                 'content': messageContent,
-                'receiver_id': receiverId // Send the 'receiver_id' key
+                'receiver_id': receiverId // Use the actual receiver ID
             }));
 
-            // Optionally clear the input field
             document.getElementById('content').value = '';
         };
     </script>

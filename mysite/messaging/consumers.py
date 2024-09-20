@@ -4,6 +4,8 @@ import json
 
 class MessageConsumer(AsyncWebsocketConsumer):
     async def connect(self):
+        print(self.scope)
+
         self.group_name = 'chat_group'
         await self.channel_layer.group_add(
             self.group_name,
