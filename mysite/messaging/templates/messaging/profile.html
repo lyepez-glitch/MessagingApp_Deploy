@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,33 +7,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 
 <body>
-    <h1>Profile Info</h1>
-    <a href="/rooms/profile/edit">Edit Profile</a>
+
 </body>
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
+<div id="profileForm">
+    <h1>Profile Info</h1>
+    <a style="margin-bottom:20px;" href="/rooms/profile/edit">Edit Profile</a>
+    <form id="actualForm" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
 
 
-    <label for="bio">Bio:</label>
-    <textarea id="bio" name="bio" rows="4" cols="50">{{ form.bio.value }}</textarea>
-    <br><br>
+        <label class="bioLabel" for="bio">Bio:</label>
+        <textarea id="bio" name="bio" rows="4" cols="50">{{ form.bio.value }}</textarea>
+        <br><br>
 
-    <label for="location">Location:</label>
-    <input type="text" id="location" name="location" value="{{ form.location.value }}">
-    <br><br>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" value="{{ form.location.value }}">
+        <br><br>
 
-    <label for="phone_number">Phone Number:</label>
-    <input type="text" id="phone_number" name="phone_number" value="{{ form.phone_number.value }}">
-    <br><br>
-    <label for="profile_picture">Profile Picture:</label>
-    <input type="file" id="profile_picture" name="profile_picture">
-    <br><br>
+        <label for="phone_number">Phone Number:</label>
+        <input type="text" id="phone_number" name="phone_number" value="{{ form.phone_number.value }}">
+        <br><br>
+        <label for="profile_picture">Profile Picture:</label>
+        <input type="file" id="profile_picture" name="profile_picture">
+        <br><br>
 
 
-    <input type="submit" value="Submit">
-</form>
+        <input type="submit" value="Submit">
+    </form>
+
+</div>
+
 
 </html>

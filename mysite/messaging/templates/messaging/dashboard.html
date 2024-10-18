@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,29 +7,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 
 <body>
-    <h1>Messages</h1>
-    <a href="{% url 'logout' %}">Log Out</a>
-    <a href="/rooms/profile">Edit Profile</a>
+    <h1 id="users">Users</h1>
+    <a id="logout" href="{% url 'logout' %}">Log Out</a>
+    <a id="editProfile" href="/rooms/profile">Edit Profile</a>
 
 
 
 
 
 
-    <div class="main">
+    <div id="userContainer" class="main">
         {% for user in users %}
-        <div>
-            <a href="/rooms/room/{{user.id}}">Go to room</a>
-            <p>Username: {{ user.username }}</p>
-            <p>Bio: {{ user.profile.bio }}</p>
-            <p>Location: {{ user.profile.location }}</p>
-            <p>Phone Number: {{ user.profile.phone_number }}</p>
+        <div class="userCard">
+            <a id="goTo" href="/rooms/room/{{user.id}}">Go to room</a>
+            <p class="profileField">Username: {{ user.username }}</p>
+            <p class="profileField">Bio: {{ user.profile.bio }}</p>
+            <p class="profileField">Location: {{ user.profile.location }}</p>
+            <p class="profileField">Phone Number: {{ user.profile.phone_number }}</p>
             {% if user.profile.profile_pic_url %}
             <img src="{{ user.profile.profile_pic_url }}" alt="Profile Picture" style="width: 100px; height: auto;"> {% else %}
-            <p>No profile picture available.</p>
+            <p id="noPic">No profile picture available.</p>
             {% endif %}
             <hr/>
         </div>

@@ -1,9 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+
 <body>
     <div id="messages" class="messages">
         {% for message in messages %}
         <div class="message">
             <strong>{{ message.sender.username }}:</strong>
             <p>{{ message.content }}</p>
+
             <a href="{% url 'updateMsg' message.id %}">Edit</a>
             <a href="{% url 'deleteMsg' message.id %}">Delete</a>
         </div>
@@ -60,7 +73,16 @@
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message';
             console.log('data', data)
-            messageDiv.innerHTML = `<strong>${data.sender_username}:</strong> <p>${data.content}</p>`;
+            const editUrl = `{% url 'updateMsg' 0 %}`.replace('0', data.message_id); // Placeholder to construct the URL
+            const deleteUrl = `{% url 'deleteMsg' 0 %}`.replace('0', data.message_id); // Placeholder to construct the URL
+
+            messageDiv.innerHTML = `
+                <strong>${data.sender_username}:</strong>
+                <p>${data.content}</p>
+                <a href="${editUrl}">Edit</a>
+                <a href="${deleteUrl}">Delete</a>
+            `;
+
             document.getElementById('messages').appendChild(messageDiv);
             showNotification(data.sender_username, data.content);
         };
@@ -76,10 +98,13 @@
             // Send the message via WebSocket
             socket.send(JSON.stringify({
                 'content': messageContent,
-                'receiver_id': receiverId // Use the actual receiver ID
+                'receiver_id': receiverId,
+                'type': 'create_message'
             }));
 
             document.getElementById('content').value = '';
         };
     </script>
 </body>
+
+</html>

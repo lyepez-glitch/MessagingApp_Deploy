@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,14 +7,91 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+
 </head>
 
 <body>
-    <h1>Edit Message</h1>
-    <form method="POST" action="{% url 'updateMsg' message.id %}">
-        {% csrf_token %} {{ form.as_p }}
-        <input type="submit" value="Update">
-    </form>
+    <div id="msgContainer">
+        <h1 id="editHeader">Edit Message</h1>
+        <form id="editForm" method="POST" action="/rooms/rooms/message/edit/{{ message.id }}/">
+            {% csrf_token %}
+            <p>
+                <label id="editContent" for="{{ form.content.id_for_label }}">Content:</label>
+                <textarea id="editTextArea" name="content" cols="40" rows="10" required id="{{ form.content.id_for_label }}">{{ form.content.value|default:"" }}</textarea>
+            </p>
+            <input id="submitEdit" type="submit" value="Update">
+        </form>
+    </div>
+
 </body>
+<script>
+    function showNotification(sender, content) {
+        // Create a notification element
+        const notification = document.createElement('div');
+        notification.className = 'notification';
+        notification.innerText = `${sender}: ${content}`;
+
+        // Style the notification
+        notification.style.position = 'fixed';
+        notification.style.bottom = '20px';
+        notification.style.right = '20px';
+        notification.style.backgroundColor = '#4CAF50';
+        notification.style.color = 'white';
+        notification.style.padding = '10px';
+        notification.style.borderRadius = '5px';
+        notification.style.zIndex = '1000';
+
+        // Append to body
+        document.body.appendChild(notification);
+
+        // Remove the notification after a few seconds
+        setTimeout(() => {
+            notification.remove();
+        }, 3000);
+    }
+    const socket = new WebSocket('ws://127.0.0.1:8000/ws/some_path/');; // Replace with your WebSocket server URL
+
+    socket.onopen = function() {
+        console.log('WebSocket connection established.');
+    };
+
+    socket.onmessage = function(event) {
+        const data = JSON.parse(event.data);
+
+        console.log('Message received from server:', event.data);
+        if (data.type === 'redirect') {
+            // Redirect to the specified URL
+            setTimeout(() => {
+                window.location.href = data.url;
+            }, 3000);
+
+        }
+        // Handle incoming messages here
+    };
+
+    socket.onclose = function() {
+        console.log('WebSocket connection closed.');
+    };
+    const editForm = document.getElementById('editForm');
+    if (editForm) {
+        editForm.onsubmit = function(event) {
+            event.preventDefault(); // Prevent default form submission
+            console.log('editing')
+            const messageContent = document.getElementById('editTextArea').value;
+            const messageId = "{{ message.id }}"; // Get the message ID
+
+            // Send the updated message via WebSocket
+            socket.send(JSON.stringify({
+                'content': messageContent,
+                'message_id': messageId, // Include message ID for the update
+                'type': 'update_message' // Specify the type for your server
+            }));
+
+            // Optionally show a notification
+            showNotification("You updated the message", messageContent);
+        };
+    }
+</script>
 
 </html>
