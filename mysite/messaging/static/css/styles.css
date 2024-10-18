@@ -104,6 +104,14 @@
             margin-top: 170px;
         }
         
+        .messages {
+            display: flex;
+            height: 400px;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-top: 170px;
+        }
+        
         .message {
             border: 2px solid black;
             background-color: yellow;
