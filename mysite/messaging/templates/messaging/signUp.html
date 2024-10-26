@@ -24,7 +24,7 @@
 
                 <label for="id_username">Username:</label>
                 <div id="usernameSignUp">
-                    <input type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus required aria-describedby="id_username_helptext" id="id_username">
+                    <input style="width:100%;" type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus required aria-describedby="id_username_helptext" id="id_username">
                 </div>
 
                 <span class="helptext" id="id_username_helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
@@ -39,7 +39,7 @@
             <p>
                 <label for="id_password1">Password:</label>
                 <div id="passwordSignUp">
-                    <input type="password" name="password1" autocomplete="new-password" aria-describedby="id_password1_helptext" id="id_password1">
+                    <input style="width:100%;" type="password" name="password1" autocomplete="new-password" aria-describedby="id_password1_helptext" id="id_password1">
                 </div>
 
 
@@ -62,7 +62,7 @@
             <!-- Password confirmation field -->
             <p>
                 <label style="margin-bottom:40px;" for="id_password2">Password confirmation:</label>
-                <input style="display:block;" type="password" name="password2" autocomplete="new-password" aria-describedby="id_password2_helptext" id="id_password2">
+                <input style="display:block;width:52%;" type="password" name="password2" autocomplete="new-password" aria-describedby="id_password2_helptext" id="id_password2">
 
                 <!-- Display error message if there is a validation error -->
                 {% if form.password2.errors %}

@@ -12,8 +12,8 @@
 
 <body>
     <h1 id="users">Users</h1>
-    <a id="logout" href="{% url 'logout' %}">Log Out</a>
-    <a id="editProfile" href="/rooms/profile">Edit Profile</a>
+    <a style="margin-left:30%;" id="logout" href="{% url 'logout' %}">Log Out</a>
+    <a style="margin-left:30%;" id="editProfile" href="/rooms/profile">Edit Profile</a>
 
 
 
@@ -29,7 +29,7 @@
             <p class="profileField">Location: {{ user.profile.location }}</p>
             <p class="profileField">Phone Number: {{ user.profile.phone_number }}</p>
             {% if user.profile.profile_pic_url %}
-            <img src="{{ user.profile.profile_pic_url }}" alt="Profile Picture" style="width: 100px; height: auto;"> {% else %}
+            <img src="{{ user.profile.profile_pic_url }}" alt="Profile Picture" style="width: 200px;height: auto;max-height: 160px;"> {% else %}
             <p id="noPic">No profile picture available.</p>
             {% endif %}
             <hr/>
