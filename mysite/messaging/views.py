@@ -13,10 +13,12 @@ def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
 def rooms(request):
 
+
   context = {}
   context = {
         "users": User.objects.all()
     }
+  print("Room view called. Users:", context["users"])
   print(context["users"])
   return render(request, "messaging/rooms.html", context)
 

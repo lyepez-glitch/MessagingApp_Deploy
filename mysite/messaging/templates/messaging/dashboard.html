@@ -29,7 +29,7 @@
             <p class="profileField">Location: {{ user.profile.location }}</p>
             <p class="profileField">Phone Number: {{ user.profile.phone_number }}</p>
             {% if user.profile.profile_pic_url %}
-            <img src="{{ user.profile.profile_pic_url }}" alt="Profile Picture" style="width: 200px;height: auto;max-height: 160px;"> {% else %}
+            <img src="{{ user.profile.profile_pic_url }}" alt="Profile Picture"> {% else %}
             <p id="noPic">No profile picture available.</p>
             {% endif %}
             <hr/>

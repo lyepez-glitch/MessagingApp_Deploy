@@ -56,10 +56,12 @@
                 notification.remove();
             }, 3000);
         }
-
-        const socket = new WebSocket('ws://127.0.0.1:8000/ws/some_path/');
-
+        const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
         const receiverId = "{{ user.id }}"; // Get the logged-in user's ID
+
+        const socket = new WebSocket('wss://lyep.pythonanywhere.com/ws/some_path/');
+
+
 
         socket.withCredentials = true;
         socket.onopen = function(e) {
@@ -97,6 +99,7 @@
             socket.send(JSON.stringify({
                 'content': messageContent,
                 'receiver_id': receiverId,
+                'csrf_token': csrfToken,  // Include the CSRF token
                 'type': 'create_message'
             }));
 

@@ -5,28 +5,28 @@
             background-color: pink;
             margin-left: 400px;
         }
-        
+
         #logInHeader {
             margin-left: 610px;
         }
-        
+
         form p {
             margin-left: 250px;
             margin-top: 40px;
         }
-        
+
         input[type=submit] {
             margin-left: 250px;
             margin-top: 10px;
         }
-        
+
         .profileField {
             border: 2px solid black;
             background-color: aquamarine;
             width: 200px;
             margin-left: 50px;
         }
-        
+
         .userCard {
             border: 2px solid black;
             background-color: purple;
@@ -38,7 +38,7 @@
             height: 221px;
             margin-top: 50px;
         }
-        
+
         #userContainer {
             display: flex;
             height: 400px;
@@ -46,56 +46,56 @@
             flex-wrap: wrap;
             align-items: flex-start;
         }
-        
+
         #goTo {
             color: white;
         }
-        
+
         #noPic {
             color: white;
         }
-        
+
         #users {
             margin-left: 600px;
         }
-        
+
         #logout,
         #editProfile {
             margin-left: 47%;
         }
-        
+
         body {
             background-color: lightblue;
         }
-        
+
         #noMessagesYet,
         .typeMsgHere {
             margin-left: 30%;
         }
-        
+
         .typeMsgHere {
             margin-top: 20px;
         }
-        
+
         #roomSubmit {
             margin-left: 50%;
             position: absolute;
         }
-        
+
         textarea {
             margin-left: 40%;
         }
-        
+
         .typeMsgHere {
             margin-left: 50%;
             position: absolute;
             margin-top: -20px;
         }
-        
+
         #roomForm {
             margin-top: 30px;
         }
-        
+
         .messagesContainer {
             display: flex;
             height: 400px;
@@ -103,7 +103,7 @@
             flex-wrap: wrap;
             margin-top: 170px;
         }
-        
+
         .message {
             border: 2px solid black;
             background-color: yellow;
@@ -118,11 +118,11 @@
             align-items: center;
             flex-direction: column;
         }
-        
+
         .message strong {
             margin-top: 50px;
         }
-        
+
         #editMsg,
         #deleteMsg {
             border: 2px solid black;
@@ -131,11 +131,11 @@
             height: 20px;
             background-color: white;
         }
-        
+
         #deleteMsg {
             margin-top: 5px;
         }
-        
+
         #submitEdit,
         #editContent {
             margin-left: 600px;
@@ -144,25 +144,25 @@
             margin-top: -30px;
             position: absolute;
         }
-        
+
         #editTextArea {
             margin-left: 30%;
         }
-        
+
         #submitEdit {
             margin-left: 840px;
             margin-top: 5px;
         }
-        
+
         #editHeader {
             margin-top: 30vh;
             margin-left: 45vw;
         }
-        
+
         #noMessagesYet {
             margin-left: 49%;
         }
-        
+
         #user-card {
             border: 2px solid black;
             background-color: orange;
@@ -180,7 +180,7 @@
             align-items: center;
             flex-direction: column;
         }
-        
+
         .main {
             display: flex;
             height: 400px;
@@ -188,85 +188,85 @@
             flex-wrap: wrap;
             margin-top: 170px;
         }
-        
+
         #signUpRooms {
             text-decoration: none;
         }
-        
+
         #signupBtn {
             margin-left: 46%;
         }
-        
+
         #welcomeRooms {
             margin-left: 40%;
             margin-top: 40px;
         }
-        
+
         #signUpHeader {
             margin-left: 28vw;
         }
-        
+
         #wrapper {
             margin-left: 20vw;
             margin-top: 20vh;
         }
-        
+
         #wrapper ul {
             margin-left: 20vw;
         }
-        
+
         #usernameSignUp {
             background-color: white;
             margin-left: 250px;
             width: 100px;
             margin-bottom: 20px;
         }
-        
+
         #passwordSignUp {
             background-color: white;
             margin-left: 250px;
             width: 100px;
         }
-        
+
         #errs ul {
             background-color: white;
             margin-left: 250px;
             width: 500px;
             text-align: center;
         }
-        
+
         .helptext {
             width: 100px;
             margin-left: 250px;
             margin-top: 20px;
         }
-        
+
         #signUpForm {
             background-color: lightcoral;
             width: 80%;
             padding-top: 20px;
             padding-bottom: 20px;
         }
-        
+
         #pwConfirm {
             margin-left: 250px;
         }
-        
+
         #editProfile {
             margin-left: 40%;
         }
-        
+
         #logout,
         #editProfile {
             margin-left: 23%;
         }
-        
+
         #profileForm {
             width: 500px;
             margin-left: 35%;
             margin-top: 12%;
         }
-        
+
         #actualForm {
             margin-top: 20px;
             background-color: orange;
@@ -275,28 +275,30 @@
             padding-bottom: 20px;
             padding-left: 20px;
         }
-        
+
         #profileForm textarea {
             margin-left: 65px;
         }
-        
+
         .bioLabel {
             position: absolute;
             margin-top: 25px;
         }
-        
+
         img {
-            width: 400px;
-            height: auto;
-            margin-left: -59%;
-            margin-top: -20%;
-            position: absolute;
+            /*width: 400px;*/
+            /*height: auto;*/
+            /*margin-left: -59%;*/
+            /*margin-top: -20%;*/
+            /*position: absolute;*/
+            height: 30%;
+            width: 50%;
         }
-        
+
         #userContainer {
             margin-top: 10%;
         }
-        
+
         .notification {
             position: fixed;
             bottom: 20px;
@@ -306,4 +308,17 @@
             padding: 10px;
             border-radius: 5px;
             z-index: 1000;
+        }
+
+        .userCard {
+            border: 2px solid black;
+            background-color: purple;
+            width: 300px;
+            border-radius: 10px;
+            flex: 0 1 300px;
+            border-radius: 10px;
+            text-align: center;
+            height: 221px;
+            margin-top: 50px;
+            height: 380px;
         }

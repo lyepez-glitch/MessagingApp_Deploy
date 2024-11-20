@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['lyep.pythonanywhere.com']
 
 
 
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -127,18 +128,30 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
+# # Static files (CSS, JavaScript, Images)
+# # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+# STATIC_URL = '/static/'
+
+# STATICFILES_DIRS = []
+# # STATIC_ROOT = BASE_DIR / 'staticfiles'  # This is where collectstatic will place files
+
+# STATIC_ROOT = '/home/lyep/messaging_app/static'
+
+
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 STATIC_URL = '/static/'
 
+# Specify the directory where static files will be collected
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # This is where collectstatic will place files
+
+# Directories where Django will look for static files
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',  # Ensure you have this set to your static files directory
+    os.path.join(BASE_DIR, 'static'),  # Assuming you create this directory
+    # os.path.join(BASE_DIR, 'mysite', 'static'),  # Uncomment if you want this too
 ]
-STATIC_ROOT = BASE_DIR / 'staticfiles'  # This is where collectstatic will place files
-
-
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
