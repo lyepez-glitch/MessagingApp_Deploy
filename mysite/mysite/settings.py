@@ -32,7 +32,9 @@ ALLOWED_HOSTS = ['messagingapp-deploy.onrender.com']
 
 
 
-
+CSRF_TRUSTED_ORIGINS = [
+    'https://messagingapp-deploy.onrender.com',
+]
 
 
 # Application definition
