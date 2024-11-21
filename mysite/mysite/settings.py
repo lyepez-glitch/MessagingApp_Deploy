@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 import os
 
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 from pathlib import Path
 
@@ -48,8 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'messaging',
     'channels',
-    'cloudinary',
-    'cloudinary-storage'
+    'cloudinary'
 ]
 
 CHANNEL_LAYERS = {
@@ -169,11 +171,11 @@ logging.basicConfig(level=logging.DEBUG)
 
 
 # Cloudinary credentials
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'dnvwzsyue',
-    'API_KEY': '714138765989979',
-    'API_SECRET': 'Irbv5gESfaYehtqZGagLX9KC2OE',
-}
+cloudinary.config(
+    cloud_name= "dnvwzsyue",
+    api_key="714138765989979",
+    api_secret= "Irbv5gESfaYehtqZGagLX9KC2OE",
+)
 
 # Use Cloudinary for media file storage
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
