@@ -50,7 +50,8 @@
             notification.remove();
         }, 3000);
     }
-    const socket = new WebSocket('wss://lyep.pythonanywhere.com/ws/some_path/');; // Replace with your WebSocket server URL
+    const socket = new WebSocket('wss://messagingapp-deploy.onrender.com/ws/some_path/');
+    // Replace with your WebSocket server URL
 
     socket.onopen = function() {
         console.log('WebSocket connection established.');

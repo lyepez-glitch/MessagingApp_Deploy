@@ -59,7 +59,7 @@
         const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
         const receiverId = "{{ user.id }}"; // Get the logged-in user's ID
 
-        const socket = new WebSocket('wss://lyep.pythonanywhere.com/ws/some_path/');
+        const socket = new WebSocket('wss://messagingapp-deploy.onrender.com/ws/some_path/');
 
 
 
@@ -99,7 +99,7 @@
             socket.send(JSON.stringify({
                 'content': messageContent,
                 'receiver_id': receiverId,
-                'csrf_token': csrfToken,  // Include the CSRF token
+                'csrf_token': csrfToken, // Include the CSRF token
                 'type': 'create_message'
             }));
 
