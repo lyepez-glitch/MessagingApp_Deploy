@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'messaging',
     'channels',
     'cloudinary',
-    'cloudinary_storage'
+    'cloudinary-storage'
 ]
 
 CHANNEL_LAYERS = {
