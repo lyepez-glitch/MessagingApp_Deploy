@@ -47,7 +47,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'messaging',
-    'channels'
+    'channels',
+    'cloudinary',
+    'cloudinary_storage'
 ]
 
 CHANNEL_LAYERS = {
@@ -164,3 +166,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import logging
 
 logging.basicConfig(level=logging.DEBUG)
+
+
+# Cloudinary credentials
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'dnvwzsyue',
+    'API_KEY': '714138765989979',
+    'API_SECRET': 'Irbv5gESfaYehtqZGagLX9KC2OE',
+}
+
+# Use Cloudinary for media file storage
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
