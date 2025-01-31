@@ -59,7 +59,8 @@
         const csrfToken = document.querySelector('[name=csrfmiddlewaretoken]').value;
         const receiverId = "{{ user.id }}"; // Get the logged-in user's ID
 
-        const socket = new WebSocket('wss://messagingapp-deploy.onrender.com/ws/some_path/');
+
+        const socket = new WebSocket("{{ socket_url }}");
 
 
 
