@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import SignUpForm,LogInForm,ProfileForm,MessageForm
 from django.db.models import Q
 from .models import Profile,Message
+import os
 def index(request):
     return HttpResponse("Hello, world. You're at the polls index.")
 def rooms(request):
@@ -121,7 +122,8 @@ def room(request, user_id):
     ).order_by('timestamp')
     #find all messages where the sender is either the other user or you and the receiver is either the other user or you
     print('Messages:', messages)
-    return render(request, 'messaging/room.html', {'user': user,'messages':messages})
+    socket_url = os.getenv("SOCKET_URL")
+    return render(request, 'messaging/room.html', {'user': user,'messages':messages,'socket_url':socket_url})
 
 @login_required
 def message(request,user_id):
@@ -153,7 +155,8 @@ def updateMsg(request,msg_id):
       return redirect('/rooms/dashboard')
   else:
     form = MessageForm(instance=msg)
-  return render(request, 'messaging/edit_message.html', {'form': form, 'message': msg})
+    socket_url = os.getenv("SOCKET_URL")
+  return render(request, 'messaging/edit_message.html', {'form': form, 'message': msg,'socket_url':socket_url})
 
 def deleteMsg(request,msg_id):
   msg = get_object_or_404(Message, id=msg_id)
