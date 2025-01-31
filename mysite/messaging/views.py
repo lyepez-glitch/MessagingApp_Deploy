@@ -20,7 +20,7 @@ def rooms(request):
     }
   print("Room view called. Users:", context["users"])
   print(context["users"])
-  return render(request, "messaging/rooms.html", [])
+  return render(request, "messaging/rooms.html", {"users":[]})
 
 
 def signUp(request):
