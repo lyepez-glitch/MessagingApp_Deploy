@@ -60,7 +60,11 @@
         const receiverId = "{{ user.id }}"; // Get the logged-in user's ID
 
 
-        const socket = new WebSocket("{{ socket_url }}");
+
+        const socketUrl = "{{ socket_url|escapejs }}"; // Ensure proper escaping for JavaScript
+        console.log("WebSocket URL:", socketUrl);
+        const socket = new WebSocket(socketUrl);
+
 
 
 
