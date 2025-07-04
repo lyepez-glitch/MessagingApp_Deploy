@@ -123,6 +123,7 @@ def room(request, user_id):
     #find all messages where the sender is either the other user or you and the receiver is either the other user or you
     print('Messages:', messages)
     socket_url = os.getenv("SOCKET_URL")
+    print('socket url' + str(socket_url))
     return render(request, 'messaging/room.html', {'user': user,'messages':messages,'socket_url':socket_url})
 
 @login_required

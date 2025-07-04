@@ -11,9 +11,26 @@
 </head>
 
 <body>
+
+    <nav class="navBar">
+        <ul>
+            <li><img onclick="showLinks()" class="profileImgNav" src="{% static 'images/avatar.jpg' %}" alt="Example"></li>
+            <li style="display:none;" id="navLinks" class="navLinks">
+                <div class="linkDiv">
+                    <a style="margin-left:30%;" id="logout" href="{% url 'logout' %}">Log Out</a>
+                    <a style="margin-left:30%;" id="editProfile" href="/rooms/profile">Edit Profile</a>
+
+                </div>
+            </li>
+        </ul>
+
+
+
+
+
+    </nav>
     <h1 id="users">Users</h1>
-    <a style="margin-left:30%;" id="logout" href="{% url 'logout' %}">Log Out</a>
-    <a style="margin-left:30%;" id="editProfile" href="/rooms/profile">Edit Profile</a>
+
 
 
 
@@ -23,21 +40,54 @@
     <div id="userContainer" class="main">
         {% for user in users %}
         <div class="userCard">
-            <a id="goTo" href="/rooms/room/{{user.id}}">Go to room</a>
-            <p class="profileField">Username: {{ user.username }}</p>
-            <p class="profileField">Bio: {{ user.profile.bio }}</p>
-            <p class="profileField">Location: {{ user.profile.location }}</p>
-            <p class="profileField">Phone Number: {{ user.profile.phone_number }}</p>
-            {% if user.profile.profile_pic_url %}
-            <img src="{{ user.profile.profile_pic_url }}" alt="Profile Picture"> {% else %}
-            <p id="noPic">No profile picture available.</p>
-            {% endif %}
-            <hr/>
+            <div class="imgCont">
+                {% if user.profile.profile_pic_url and 'cloudinary.com' in user.profile.profile_pic_url %}
+                <!-- <img class="usersImg" src="{% static 'images/avatar.jpg' %}" alt="Example"> -->
+                <img src="{{ user.profile.profile_pic_url }}" alt="Profile Picture"> {% else %}
+                <img class="usersImg" src="{% static 'images/avatar.jpg' %}" alt="Example">
+                <!-- <p id="noPic">No profile picture available.</p> -->
+                {% endif %}
+
+            </div>
+
+            <p class="profileField">{{ user.username|capfirst}}</p>
+            <div class="goToCont"><a id="goTo" href="/rooms/room/{{user.id}}">Go to room</a></div>
+
+
+            <!-- <p class="profileField">Bio: {{ user.profile.bio }}</p> -->
+            <!-- <p class="profileField">{{ user.profile.location }}</p>
+            <p class="profileField">{{ user.profile.phone_number }}</p> -->
+            <button class="toggleDetailsBtn" onclick="toggleDetails('{{ user.id }}')">Toggle Details</button>
+            <div id="details-{{ user.id }}" class="userDetails" style="display: none;">
+                <p class="userProfileFieldLabel">Bio</p>
+                <p class="userProfileField"> {{ user.profile.bio }}</p>
+                <p class="userProfileFieldLabel">Location</p>
+                <p class="userProfileField">{{ user.profile.location }}</p>
+                <p class="userProfileFieldLabel">Phone Number</p>
+                <p class="userProfileField">{{ user.profile.phone_number }}</p>
+            </div>
         </div>
         {% empty %}
         <p>No users found.</p>
         {% endfor %}
     </div>
+
+
+    <script>
+        function showLinks() {
+            const menu = document.querySelector('.navLinks');
+            if (menu.style.display === 'none' || menu.style.display === '') {
+                menu.style.display = 'block';
+            } else {
+                menu.style.display = 'none';
+            }
+        }
+
+        function toggleDetails(userId) {
+            const section = document.getElementById(`details-${userId}`);
+            section.style.display = (section.style.display === 'none' || section.style.display === '') ? 'block' : 'none';
+        }
+    </script>
 </body>
 
 </html>

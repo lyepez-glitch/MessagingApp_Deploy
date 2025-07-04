@@ -7,39 +7,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 
 <body>
+    <div id="profileForm">
 
+        <form id="actualForm" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <h1>Profile Info</h1>
+            <!-- <a style="margin-bottom:20px;" href="/rooms/profile/edit">Edit Profile</a> -->
+
+            <label class="bioLabel" for="bio">Bio</label>
+            <textarea id="bio" name="bio" rows="4" cols="50">{{ form.bio.value }}</textarea>
+            <br><br>
+
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" value="{{ form.location.value }}">
+            <br><br>
+
+            <label for="phone_number">Phone Number</label>
+            <input type="text" id="phone_number" name="phone_number" value="{{ form.phone_number.value }}">
+            <br><br>
+
+            <div class="profilePicHdr">Profile Picture</div>
+
+            <label for="profile_picture" class="custom-file-upload">+ Upload photo</label>
+            <span id="file-name">No file chosen</span>
+            <input type="file" id="profile_picture" name="profile_picture">
+            <br><br>
+
+
+            <input type="submit" value="Edit your profile">
+        </form>
+
+    </div>
+    <script>
+        const input = document.getElementById('profile_picture');
+        const fileName = document.getElementById('file-name');
+
+        input.addEventListener('change', function() {
+            if (input.files.length > 0) {
+                fileName.textContent = input.files[0].name;
+            } else {
+                fileName.textContent = 'No file chosen';
+            }
+        });
+    </script>
 </body>
-<div id="profileForm">
-    <h1>Profile Info</h1>
-    <a style="margin-bottom:20px;" href="/rooms/profile/edit">Edit Profile</a>
-    <form id="actualForm" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
 
-
-        <label class="bioLabel" for="bio">Bio:</label>
-        <textarea id="bio" name="bio" rows="4" cols="50">{{ form.bio.value }}</textarea>
-        <br><br>
-
-        <label for="location">Location:</label>
-        <input type="text" id="location" name="location" value="{{ form.location.value }}">
-        <br><br>
-
-        <label for="phone_number">Phone Number:</label>
-        <input type="text" id="phone_number" name="phone_number" value="{{ form.phone_number.value }}">
-        <br><br>
-        <label for="profile_picture">Profile Picture:</label>
-        <input type="file" id="profile_picture" name="profile_picture">
-        <br><br>
-
-
-        <input type="submit" value="Submit">
-    </form>
-
-</div>
 
 
 </html>

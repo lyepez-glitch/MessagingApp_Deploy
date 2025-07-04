@@ -31,7 +31,8 @@ SECRET_KEY = 'django-insecure-4=s-y6ua&8kha!8ucdmr1yj6d*t%8n9y+-nyxanry#nmmh9573
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['messagingapp-deploy.onrender.com']
+ALLOWED_HOSTS = ['messagingapp-deploy.onrender.com','localhost',
+    '127.0.0.1']
 
 
 
@@ -157,7 +158,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # This is where collectstat
 
 # Directories where Django will look for static files
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),  # Assuming you create this directory
+    # os.path.join(BASE_DIR, 'static'),  # Assuming you create this directory
     # os.path.join(BASE_DIR, 'mysite', 'static'),  # Uncomment if you want this too
 ]
 # Default primary key field type

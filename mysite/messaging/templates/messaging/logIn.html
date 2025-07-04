@@ -11,17 +11,37 @@
 </head>
 
 <body>
-    <h1 id="logInHeader">Login</h1>
-    <form id="loginForm" method="POST" enctype="multipart/form-data">
+    <div id="wrapper">
+        <h1 id="logInHeader">messagingApp</h1>
 
-        <!-- Security token -->
-        {% csrf_token %}
 
-        <!-- Using the formset -->
-        {{ form.as_p }}
+        <form id="loginForm" method="POST" enctype="multipart/form-data">
+            <div id="loginHdr">Log Into messagingApp</div>
 
-        <input type="submit" value="Submit">
-    </form>
+            {% csrf_token %}
+
+
+            <div id="inputCont">
+                <input type="text" name="username" id="id_username" required placeholder="username" autocomplete="username" autofocus>
+                <input type="password" name="password" id="id_password" placeholder="password" required autocomplete="current-password">
+                <input type="submit" value="Submit">
+            </div>
+
+            <div id="divideCont">
+                <span class="loginDivider"></span>
+                <span class="loginOr">or</span>
+                <span class="loginDivider"></span>
+            </div>
+
+            <button onClick="window.location.href='/signUp'" class="newActBtn">Create new account</button>
+
+
+
+
+        </form>
+    </div>
+    <div id="whitebar" style="height:30vh"></div>
+
 </body>
 
 </html>

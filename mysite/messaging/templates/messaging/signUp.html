@@ -12,69 +12,75 @@
 
 <body>
     <div id="wrapper">
-        <h1 id="signUpHeader">SignUp</h1>
+        <h1 id="signUpHeader">messagingApp</h1>
 
         <form id="signUpForm" method="POST" enctype="multipart/form-data">
-
+            <div id="createHdr">Create a new account</div>
+            <p id="simpleAndFast">It's simple and fast</p>
+            <div id="signUpDivider"></div>
             <!-- Security token -->
             <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
 
             <!-- Username field -->
-            <p>
 
-                <label for="id_username">Username:</label>
-                <div id="usernameSignUp">
-                    <input style="width:100%;" type="text" name="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus required aria-describedby="id_username_helptext" id="id_username">
-                </div>
 
-                <span class="helptext" id="id_username_helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
 
-                <!-- Display error message if there is a validation error -->
-                {% if form.username.errors %}
-                <span class="error">{{ form.username.errors }}</span> {% endif %}
-            </p>
+            <div id="usernameSignUp">
+                <input style="width:100%;" type="text" name="username" placeholder="username" maxlength="150" autocapitalize="none" autocomplete="username" autofocus required aria-describedby="id_username_helptext" id="id_username">
+            </div>
+
+            <span class="helptext" id="id_username_helptext">Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.</span>
+
+            <!-- Display error message if there is a validation error -->
+            {% if form.username.errors %}
+            <span class="error">{{ form.username.errors }}</span> {% endif %}
+
 
             <!-- Password field -->
 
-            <p>
-                <label for="id_password1">Password:</label>
-                <div id="passwordSignUp">
-                    <input style="width:100%;" type="password" name="password1" autocomplete="new-password" aria-describedby="id_password1_helptext" id="id_password1">
-                </div>
+
+            <div id="passwordSignUp">
+                <input style="width:100%;" type="password" name="password1" placeholder="password" autocomplete="new-password" aria-describedby="id_password1_helptext" id="id_password1">
+            </div>
 
 
-                <!-- Display error message if there is a validation error -->
-                <div id="errs">
-                    {% if form.password1.errors %}
-                    <span class="error">{{ form.password1.errors }}</span> {% endif %}
-                    <ul>
-                        <li>Your password can’t be too similar to your other personal information.</li>
-                        <li>Your password must contain at least 8 characters.</li>
-                        <li>Your password can’t be a commonly used password.</li>
-                        <li>Your password can’t be entirely numeric.</li>
-                    </ul>
-                </div>
 
-            </p>
+            <!-- Display error message if there is a validation error -->
+            <div id="errs">
+                {% if form.password1.errors %}
+                <span class="error">{{ form.password1.errors }}</span> {% endif %}
+                <ul>
+                    <li>Your password can’t be too similar to your other personal information.</li>
+                    <li>Your password must contain at least 8 characters.</li>
+                    <li>Your password can’t be a commonly used password.</li>
+                    <li>Your password can’t be entirely numeric.</li>
+                </ul>
+            </div>
+
+
 
 
 
             <!-- Password confirmation field -->
-            <p>
-                <label style="margin-bottom:40px;" for="id_password2">Password confirmation:</label>
-                <input style="display:block;width:52%;" type="password" name="password2" autocomplete="new-password" aria-describedby="id_password2_helptext" id="id_password2">
 
-                <!-- Display error message if there is a validation error -->
-                {% if form.password2.errors %}
-                <span class="error">{{ form.password2.errors }}</span> {% endif %}
+            <div id="id_password2" type="password" name="password2" autocomplete="new-password" aria-describedby="id_password2_helptext">
+                <input placeholder="confirm password" type="password" name="password2" autocomplete="new-password" aria-describedby="id_password2_helptext" id="id_password2">
+            </div>
 
-                <span class="helptext" id="id_password2_helptext"><div id="pwConfirm">Enter the same password as before, for verification.</div></span>
-            </p>
+
+            <!-- Display error message if there is a validation error -->
+            {% if form.password2.errors %}
+            <span class="error">{{ form.password2.errors }}</span> {% endif %}
+
+
+
 
             <input type="submit" value="Submit">
+            <a href="{% url 'logIn' %}" style="color: #1877f2;margin-top: 10px;">Already have an account?</a>
         </form>
 
     </div>
+    <div id="whitebar" style="height:20vh"></div>
 
 
 

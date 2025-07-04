@@ -9,7 +9,7 @@
             margin: 0 auto;
             /* Center the form */
         }
-        
+
         @media (max-width: 768px) {
             #loginForm {
                 width: 90%;
@@ -17,17 +17,17 @@
                 margin-right: auto;
             }
         }
-        
+
         #logInHeader {
             margin-left: 47%;
             margin-top: 10%;
         }
-        
+
         form p {
             margin-left: 250px;
             margin-top: 40px;
         }
-        
+
         #loginForm {
             border: 2px solid black;
             width: 90%;
@@ -37,26 +37,26 @@
             max-width: 400px;
             margin: 0 auto;
         }
-        
+
         #loginForm p {
             margin-left: 0;
             text-align: center;
         }
-        
+
         #loginForm p:first-of-type {
             margin-top: 30%;
         }
-        
+
         input[type=submit] {
             margin-left: 250px;
             margin-top: 10px;
         }
-        
+
         #loginForm input[type=submit] {
             margin-left: 45%;
             width: 100px;
         }
-        
+
         @media (max-width: 768px) {
             form p,
             input[type=submit] {
@@ -64,14 +64,14 @@
                 margin-right: 10%;
             }
         }
-        
+
         .profileField {
             border: 2px solid black;
             background-color: #f8f9fa;
             width: 200px;
             margin-left: 50px;
         }
-        
+
         .userCard {
             border: 2px solid black;
             background-color: #f9f9f9;
@@ -84,7 +84,7 @@
             margin-top: 50px;
             height: 450px;
         }
-        
+
         @media (max-width: 768px) {
             .userCard {
                 width: 90%;
@@ -92,7 +92,7 @@
                 margin-right: auto;
             }
         }
-        
+
         #userContainer {
             display: flex;
             height: 400px;
@@ -101,56 +101,56 @@
             align-items: flex-start;
             padding: 10px;
         }
-        
+
         #goTo {
             color: black;
         }
-        
+
         #noPic {
             color: black;
         }
-        
+
         #users {
             margin-left: 600px;
         }
-        
+
         #logout,
         #editProfile {
             margin-left: 47%;
         }
-        
+
         body {
             background-color: lightblue;
         }
-        
+
         #noMessagesYet,
         .typeMsgHere {
             margin-left: 30%;
         }
-        
+
         .typeMsgHere {
             margin-top: 20px;
         }
-        
+
         #roomSubmit {
             margin-left: 50%;
             position: absolute;
         }
-        
+
         textarea {
             margin-left: 40%;
         }
-        
+
         .typeMsgHere {
             margin-left: 50%;
             position: absolute;
             margin-top: -20px;
         }
-        
+
         #roomForm {
             margin-top: 30px;
         }
-        
+
         .messagesContainer {
             display: flex;
             height: 400px;
@@ -158,7 +158,7 @@
             flex-wrap: wrap;
             margin-top: 170px;
         }
-        
+
         .messages {
             display: flex;
             height: 400px;
@@ -167,7 +167,7 @@
             margin-top: 15%;
             /* margin-left: 45%; */
         }
-        
+
         @media (max-width: 768px) {
             .messages {
                 height: auto;
@@ -175,7 +175,7 @@
                 padding-bottom: 20px;
             }
         }
-        
+
         .message {
             border: 2px solid black;
             background-color: #fff3cd;
@@ -195,14 +195,14 @@
             flex-direction: column;
             margin: 20px;
         }
-        
+
         @media (max-width: 768px) {
             .message {
                 margin-top: 20px;
                 /* Adjust margin for smaller screens */
             }
         }
-        
+
         @media (max-width: 768px) {
             .message {
                 width: 90%;
@@ -210,11 +210,11 @@
                 margin-right: auto;
             }
         }
-        
+
         .message strong {
             margin-top: 50px;
         }
-        
+
         #editMsg,
         #deleteMsg {
             border: 2px solid black;
@@ -223,11 +223,11 @@
             height: 20px;
             background-color: white;
         }
-        
+
         #deleteMsg {
             margin-top: 5px;
         }
-        
+
         #submitEdit,
         #editContent {
             margin-left: 600px;
@@ -236,25 +236,25 @@
             margin-top: -30px;
             position: absolute;
         }
-        
+
         #editTextArea {
             margin-left: 30%;
         }
-        
+
         #submitEdit {
             margin-left: 840px;
             margin-top: 5px;
         }
-        
+
         #editHeader {
             margin-top: 30vh;
             margin-left: 45vw;
         }
-        
+
         #noMessagesYet {
             margin-left: 49%;
         }
-        
+
         #user-card {
             border: 2px solid black;
             background-color: orange;
@@ -272,7 +272,7 @@
             align-items: center;
             flex-direction: column;
         }
-        
+
         .main {
             display: flex;
             height: 400px;
@@ -281,85 +281,110 @@
             margin-left: 10%;
             /* margin-top: 170px; */
         }
-        
+
         #signUpRooms {
             text-decoration: none;
         }
-        
+
         #signupBtn {
             margin-left: 46%;
         }
-        
+
         #welcomeRooms {
             margin-left: 40%;
             margin-top: 10%;
         }
-        
-        #signUpHeader {
+
+        #signUpHeader,
+        #logInHeader {
             margin-left: 28vw;
+            color: rgb(12, 106, 252);
+            margin: 0;
+            text-align: center;
+            font-size: 45px;
         }
-        
+
         #wrapper {
             margin-left: 20vw;
-            margin-top: 20vh;
+            margin-top: 40px;
+            margin-left: 0;
+            /* margin-top: 0; */
+            position: absolute;
+            top: 15px;
         }
-        
+
         #wrapper ul {
             margin-left: 20vw;
         }
-        
+
         #usernameSignUp {
             background-color: white;
             margin-left: 250px;
             width: 100px;
             margin-bottom: 20px;
         }
-        
+
         #passwordSignUp {
             background-color: white;
-            margin-left: 250px;
             width: 100px;
+            margin-left: 0;
+            margin-right: 0;
         }
-        
+
         #errs ul {
             background-color: white;
             margin-left: 250px;
             width: 500px;
             text-align: center;
         }
-        
+
         .helptext {
             width: 100px;
             margin-left: 250px;
             margin-top: 20px;
         }
-        
-        #signUpForm {
+
+        #signUpForm,
+        #loginForm {
             background-color: lightcoral;
             width: 80%;
             padding-top: 20px;
             padding-bottom: 20px;
+            background-color: #fff;
+            height: 60vh;
+            width: 30vw;
+            /* position: absolute; */
+            left: 40%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+            border-radius: 8px;
+            margin-top: 100px;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 20px;
         }
-        
+
         #pwConfirm {
             margin-left: 250px;
         }
-        
+
         #editProfile {
             margin-left: 40%;
         }
-        
+
         #logout,
         #editProfile {
             margin-left: 23%;
         }
-        
+
         #profileForm {
             width: 500px;
             margin-left: 35%;
             margin-top: 12%;
         }
-        
+
         #actualForm {
             margin-top: 20px;
             background-color: orange;
@@ -368,16 +393,16 @@
             padding-bottom: 20px;
             padding-left: 20px;
         }
-        
+
         #profileForm textarea {
             margin-left: 65px;
         }
-        
+
         .bioLabel {
             position: absolute;
             margin-top: 25px;
         }
-        
+
         img {
             width: 400px;
             height: auto;
@@ -385,12 +410,12 @@
             margin-top: -20%;
             position: absolute;
         }
-        
+
         #userContainer {
             /* margin-top: 10%; */
             height: 100vh;
         }
-        
+
         #userContainer {
             display: flex;
             flex-direction: row;
@@ -401,7 +426,7 @@
             padding: 20px;
             /* Add some padding */
         }
-        
+
         @media (max-width: 768px) {
             #userContainer {
                 flex-direction: column;
@@ -410,7 +435,7 @@
                 /* Center items */
             }
         }
-        
+
         .notification {
             position: fixed;
             bottom: 20px;
@@ -421,7 +446,7 @@
             border-radius: 5px;
             z-index: 1000;
         }
-        
+
         .messages {
             display: flex;
             height: 100%;
@@ -432,17 +457,17 @@
             overflow-y: auto;
             padding-bottom: 60px;
         }
-        
+
         .userCard img {
             position: static;
             margin-left: 0;
-            margin-top: 40px;
+            margin-top: 0;
         }
-        
+
         .userCard {
             height: 450px;
         }
-        
+
         input[type="submit"],
         #usernameSignUp,
         #passwordSignUp {
@@ -454,7 +479,7 @@
             margin-left: 250px;
             /* Centering */
         }
-        
+
         .userCard {
             flex: 1 1 200px;
             /* Flex-grow, flex-shrink, flex-basis */
@@ -463,7 +488,7 @@
             margin: 10px;
             /* Add margin for spacing */
         }
-        
+
         @media (max-width: 768px) {
             /* Styles for tablets and smaller screens */
             #loginForm {
@@ -478,7 +503,7 @@
             }
             /* Other elements as needed */
         }
-        
+
         textarea {
             width: 80%;
             /* Make textareas wider */
@@ -487,7 +512,7 @@
             margin: 20px auto;
             /* Center */
         }
-        
+
         #editProfile,
         #logout {
             margin-left: auto;
@@ -497,7 +522,7 @@
             display: block;
             /* Make them block-level */
         }
-        
+
         .messagesContainer {
             display: flex;
             flex-direction: column;
@@ -505,7 +530,7 @@
             margin-top: 20px;
             /* Add top margin */
         }
-        
+
         @media (min-width: 768px) {
             .messagesContainer {
                 flex-direction: row;
@@ -514,32 +539,32 @@
                 /* Allow wrapping */
             }
         }
-        
+
         img {
             max-width: 100%;
             /* Ensure images don't overflow */
             height: auto;
             /* Maintain aspect ratio */
         }
-        
+
         #messageForm {
             margin-left: 40%;
         }
-        
+
         #messageForm input[type=submit] {
             width: 100px;
         }
-        
+
         #submitEdit {
             margin-left: 48%;
             width: 100px;
         }
-        
+
         #actualForm input[type=submit] {
             width: 100px;
             margin-left: 45%;
         }
-        
+
         .userCard img {
             /* Styles for the profile picture */
             max-width: 100%;
@@ -550,39 +575,613 @@
             /* Maintain aspect ratio */
             height: auto;
             /* Maintain aspect ratio */
-            border-radius: 50%;
+            border-radius: 0;
             /* Circular image */
             object-fit: cover;
             /* Crops the image to fill the container */
         }
-        
+
         body {
             background-color: #f0f0f0;
             /* Light gray */
         }
-        
+
         input[type=submit] {
             background-color: #007bff;
             /* Bootstrap blue */
             color: #ffffff;
             /* White text for contrast */
         }
-        
+
         #loginForm,
         .userCard,
         .message {
             border: 2px solid #6c757d;
             /* Bootstrap gray */
         }
-        
+
         body {
             font-family: 'Arial', sans-serif;
             font-size: 16px;
             line-height: 1.5;
         }
-        
+
         input[type="submit"]:hover {
             background-color: #0056b3;
             /* Darker blue */
             cursor: pointer;
+        }
+
+        body {
+            background: #f2f4f7;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            height: 100vh;
+        }
+
+        #appName {
+            color: rgb(9, 103, 254);
+            font-weight: bold;
+            font-size: 60px;
+            /* height: 100%; */
+            /* align-self: flex-start; */
+            margin-top: 100px;
+            margin-left: 10%;
+            margin-bottom: 10%;
+            z-index: 9999;
+        }
+
+        #homeSignUp {
+            background-color: #fff;
+            height: 400px;
+            width: 500px;
+            /* position: absolute; */
+            left: 40%;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+            border-radius: 8px;
+            margin-top: 100px;
+            flex-direction: column;
+        }
+
+        #signupBtn {
+            background-color: #36a420;
+            /* color: #fff; */
+            border: none;
+            width: 40%;
+            height: 60px;
+            border-radius: 6px;
+            margin-left: 0;
+        }
+
+        #whitebar {
+            flex: 1 1 100%;
+            height: 25vh;
+            background-color: #fff;
+            align-self: flex-end;
+        }
+
+        #signUpRooms {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #logInRooms {
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        #divider {
+            width: 80%;
+            height: 20px;
+            /* background-color: gray; */
+            border-bottom: 1px solid lightgray;
+        }
+
+        #loginBtn {
+            background-color: rgb(12, 106, 252);
+            border: none;
+            width: 80%;
+            height: 60px;
+            border-radius: 6px;
+            margin-left: 0;
+        }
+
+        #subtext {
+            font-size: 25px;
+            color: black;
+            font-weight: normal;
+            width: 400px;
+        }
+
+        #createHdr {
+            font-weight: bold;
+            font-size: 25px;
+        }
+
+        #signUpDivider {
+            width: 80%;
+            border: 1px solid lightgray;
+            margin-bottom: 20px;
+        }
+
+        #usernameSignUp,
+        #passwordSignUp {
+            margin-left: 0;
+            margin-top: 0;
+            margin-right: 0;
+        }
+
+        #usernameSignUp input {
+            width: 100%;
+            padding-left: 10px;
+            height: 35px;
+            /* border-color: lightgray !important; */
+            border: 1px solid lightgray;
+            border-radius: 6px;
+        }
+
+        .helptext {
+            margin-left: 0;
+            margin-right: 0;
+            height: 40px;
+            width: 60%;
+            margin-top: 0;
+            transform: scale(.7);
+        }
+
+        #passwordSignUp input {
+            width: 100%;
+            padding-left: 10px;
+            border: 1px solid lightgray;
+            border-radius: 6px;
+            height: 35px;
+        }
+
+        #id_password2 {
+            width: 80%;
+            max-width: 300px;
+            margin: 10px auto;
+            margin-top: 0;
+        }
+
+        #id_password2 input {
+            width: 100%;
+            padding-left: 10px;
+            border: 1px solid lightgray;
+            border-radius: 6px;
+            height: 35px;
+        }
+
+        #errs {
+            transform: scale(.7);
+        }
+
+        #errs ul {
+            margin: 0;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        #signUpForm input[type='submit'] {
+            margin: 0;
+            background-color: #36a420;
+            /* color: #fff; */
+            border: none;
+            width: 40%;
+            height: 40px;
+            border-radius: 6px;
+            margin-left: 0;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        #simpleAndFast {
+            color: gray;
+            font-weight: 300;
+            margin-left: 0;
+            margin-top: 0;
+        }
+
+        #loginForm p {
+            margin: 0;
+        }
+
+        #loginForm p:first-of-type {
+            margin-top: 0;
+        }
+
+        #loginHdr {
+            font-size: 20px;
+            margin-top: 5px;
+            font-weight: 200px;
+        }
+
+        #loginForm label {
+            display: none;
+        }
+
+        #loginForm {
+            height: 40vh;
+            justify-content: flex-start;
+            border: none;
+        }
+
+        #loginForm input {
+            width: 100%;
+            padding-left: 10px;
+            border: 1px solid lightgray;
+            border-radius: 6px;
+            height: 35px;
+        }
+
+        #inputCont {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+            width: 90%;
+            margin-top: -15%;
+            flex-direction: column;
+            width: 90%;
+            align-items: center;
+            gap: 12px;
+            /* flex-wrap: wrap; */
+            margin-top: 20px;
+        }
+
+        #inputCont input {
+            padding: 0;
+            padding-left: 10px;
+            padding-left: 10px;
+            height: 50px;
+        }
+
+        #inputCont input[type="submit"] {
+            margin: 0;
+            padding-left: 0;
+            /* flex: 1 1 100%; */
+            height: 50px;
+            min-width: 100%;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #divideCont {
+            width: 90%;
+            display: flex;
+            height: 50px;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .loginDivider {
+            border-bottom: 1px solid lightgray;
+            width: 50%;
+        }
+
+        .loginOr {}
+
+        .newActBtn {
+            background-color: #42b72a;
+            color: #fff;
+            border-radius: 6px;
+            padding: 20px;
+            font-size: 15px;
+            border: none;
+        }
+
+        .userCard {
+            background-color: #fff;
+            height: 400px;
+        }
+
+        .usersImg,
+        .userCard img {
+            margin-top: 0;
+            border-radius: 0;
+            height: 300px;
+        }
+
+        .profileField {
+            margin: 0;
+            padding-left: 10px;
+            border: none;
+            text-align: left;
+            background-color: #fff;
+            font-weight: 590;
+            font-size: 20px;
+        }
+
+        .goToCont {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        #goTo {
+            text-decoration: none;
+            /* width: 100%; */
+            /* width: 300px; */
+            display: flex;
+            background-color: #0866FF;
+            border-radius: 6px;
+            width: 90%;
+            color: #fff;
+            height: 40px;
+            font-size: 20px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .userCard {
+            box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+            border: none;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .usersImg,
+        .userCard img {
+            border-radius: 10px;
+        }
+
+        #userContainer {
+            margin-left: 0;
+        }
+
+        #users {
+            margin-left: 30px;
+        }
+
+        .navBar {
+            flex: 1 1 100%;
+            height: 50px;
+            background-color: #fff;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .navBar img {
+            object-fit: cover;
+            position: static;
+            height: 80%;
+            margin: 0;
+            border-radius: 50%;
+            width: 60%;
+        }
+
+        .navLinks {
+            list-style-type: none;
+        }
+
+        .navBar ul {
+            list-style-type: none;
+            height: 100% !important;
+            margin: 0;
+            padding: 0;
+            width: 100px;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .navBar ul li {
+            height: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 10px;
+        }
+
+        .navBar {
+            height: auto;
+            /* width: auto; */
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .navBar ul {
+            flex-direction: column;
+            /* height: 100%; */
+            /* width: auto; */
+            padding-right: 10px;
+            gap: 8px;
+            margin-right: 10px;
+        }
+
+        .navBar ul li .navLinks {
+            display: block;
+            width: 100%;
+            height: 100px !important;
+            border-radius: 8px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-right: 0px;
+        }
+
+        .navLinks div {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding-right: 10px;
+            gap: 8px;
+            height: 100%;
+            width: 100%;
+            justify-content: flex-start;
+            /* flex: 1 1 50%; */
+            /* text-decoration: none; */
+            background-color: #F8F9FB;
+            /* border: none; */
+            box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+            /* border: 1px springgreen; */
+            border: 1px solid gray;
+            border-radius: 8px;
+        }
+
+        #navLinks a {
+            margin-left: 0;
+            text-align: right;
+            margin-right: 0;
+            height: 50%;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: black;
+        }
+
+        .navBar img {
+            height: 50px;
+        }
+
+        #users {
+            flex: 1 1 100%;
+            margin-bottom: -10px;
+        }
+
+        #userContainer {
+            padding-top: 0;
+        }
+
+        #profileForm {
+            position: absolute;
+            top: 2% !important;
+            left: 0;
+            margin-top: 0;
+            height: 80vh;
+        }
+
+        #actualForm {
+            border-radius: 15px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+            /* height: 80%; */
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            padding-top: 0;
+            align-items: center;
+        }
+
+        .bioLabel {
+            position: static;
+            /* color: black; */
+            font-weight: bold;
+            width: 100%;
+        }
+
+        #actualForm h1 {
+            width: 100%;
+            text-align: center;
+        }
+
+        #actualForm a {
+            margin-bottom: 20px;
+        }
+
+        #actualForm textarea {
+            margin: 0;
+        }
+
+        #actualForm label {
+            width: 100%;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        #actualForm input {
+            width: 80%;
+            height: 40px;
+        }
+
+        #profile_picture {
+            display: none;
+        }
+
+        #actualForm label[for="profile_picture"] {
+            width: 40%;
+            background-color: #EBF5FF;
+            border-radius: 8px;
+            text-align: center;
+            color: #0064D1;
+            border: 1px solid lightgray;
+            cursor: pointer;
+        }
+
+        .profilePicHdr {
+            width: 100%;
+            font-weight: bold;
+        }
+
+        #actualForm input[type="submit"] {
+            width: 100%;
+            margin: 0;
+            background-color: #EBF5FF;
+            color: #0064D1;
+            border: 1px solid lightgray;
+            border-radius: 8px;
+            max-width: 90%;
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .linkDiv {
+            padding: 10px;
+        }
+
+        .userCard {
+            height: auto;
+        }
+
+        .toggleDetailsBtn {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .userDetails {
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px #0000001a, 0 8px 16px #0000001a;
+            border-radius: 15px;
+            background-color: #EBF5FF;
+            display: block;
+            padding: 10px;
+            transform: scale(0.9);
+        }
+
+        .userProfileFieldLabel {
+            background-color: #EBF5FF;
+            color: #0064D1;
+            text-align: left;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+        .userProfileField {
+            color: black;
+        }
+
+        .toggleDetailsBtn {
+            border-radius: 10px;
+            padding: 10px;
+            border: none;
+            width: 90%;
+            border: 1px solid lightgray;
+            font-weight: 580;
+        }
+
+        .userCard img {
+            width: 100%;
         }

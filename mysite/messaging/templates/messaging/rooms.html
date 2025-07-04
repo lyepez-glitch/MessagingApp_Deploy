@@ -11,10 +11,20 @@
 </head>
 
 <body>
-    <h1 id="welcomeRooms">Welcome to rooms</h1>
-    <button id="signupBtn"><a id="signUpRooms" href="/rooms/signUp">Sign Up</a></button>
+    <div id="appName">messageApp
+        <p id="subtext">Meet and greet with your friends all around the world.</p>
+    </div>
+    <div id="homeSignUp">
+        <!-- <h1 id="welcomeRooms">Welcome to rooms</h1> -->
 
-    <div class="main">
+        <button id="loginBtn"><a id="logInRooms" href="/rooms/logIn">Log In</a></button>
+        <div id="divider"></div>
+        <button id="signupBtn"><a id="signUpRooms" href="/rooms/signUp">Sign Up</a></button>
+    </div>
+    <div id="whitebar"></div>
+
+
+    <!-- <div class="main">
         {% for user in users %}
         <div id="user-card">
             <p class="username">{{ user.username }}</p>
@@ -23,7 +33,7 @@
         </div>
         <br/>
         <hr/> {% empty %} {% endfor %}
-    </div>
+    </div> -->
 
 </body>
 
