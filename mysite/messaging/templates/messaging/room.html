@@ -8,28 +8,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-wZxxCGLKTbhbQqPoW41GvRoD7y9LdfGyVQSRu8m7hK5W27m61rJqplmlYoxK3H7EBO8bOnazBDMALjR1n4iDyg==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+
 </head>
 
 <body>
-    <div id="messages" class="messages">
-        {% for message in messages %}
-        <div class="message">
-            <strong>{{ message.sender.username }}:</strong>
-            <p>{{ message.content }}</p>
+    <div id="messageWrapper">
+        <div class="msgHeader"></div>
+        <div id="messages" class="messages">
+            {% for message in messages %}
+            <div class="message">
+                <strong>{{ message.sender.username }}:</strong>
+                <p>{{ message.content }}</p>
 
-            <a href="{% url 'updateMsg' message.id %}">Edit</a>
-            <a href="{% url 'deleteMsg' message.id %}">Delete</a>
+                <a href="{% url 'updateMsg' message.id %}">Edit<i class="fa-solid fa-pencil"></i></a>
+                <a href="{% url 'deleteMsg' message.id %}">Delete<i class="fa-solid fa-trash"></i></a>
+            </div>
+            {% empty %} {% endfor %}
         </div>
-        {% empty %} {% endfor %}
+
+        <form id="messageForm" action="{% url 'message' user.id %}" enctype="multipart/form-data">
+            {% csrf_token %} {{ form.as_p }}
+            <!-- <label style="height: 30px;width:200px;position: absolute;" for="content">Type message here:</label> -->
+            <textarea placeholder="Type your message here..." id="content" name="content" rows="4" cols="50">{{ form.message.value }}</textarea>
+            <br><br>
+            <i class="fa-solid fa-share"></i>
+            <button type="submit" style="margin-left:130px;">
+                <i class="fa-solid fa-share"></i>
+              </button>
+        </form>
     </div>
 
-    <form id="messageForm" action="{% url 'message' user.id %}" enctype="multipart/form-data">
-        {% csrf_token %} {{ form.as_p }}
-        <label style="height: 30px;width:200px;position: absolute;" for="content">Type message here:</label>
-        <textarea id="content" name="content" rows="4" cols="50">{{ form.message.value }}</textarea>
-        <br><br>
-        <input style="margin-left:130px;" type="submit" value="Submit">
-    </form>
+
+
 
     <script>
         function showNotification(sender, content) {
@@ -84,8 +96,8 @@
             messageDiv.innerHTML = `
                 <strong>${data.sender_username}:</strong>
                 <p>${data.content}</p>
-                <a href="${editUrl}">Edit</a>
-                <a href="${deleteUrl}">Delete</a>
+                <a href="${editUrl}">Edit<i class="fa-solid fa-pen"></i></a>
+                <a href="${deleteUrl}">Delete<i class="fa-solid fa-trash"></i></a>
             `;
 
             document.getElementById('messages').appendChild(messageDiv);
