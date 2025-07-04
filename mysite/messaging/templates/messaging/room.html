@@ -8,8 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-wZxxCGLKTbhbQqPoW41GvRoD7y9LdfGyVQSRu8m7hK5W27m61rJqplmlYoxK3H7EBO8bOnazBDMALjR1n4iDyg==" crossorigin="anonymous" referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
 
 </head>
 
@@ -19,11 +19,13 @@
         <div id="messages" class="messages">
             {% for message in messages %}
             <div class="message">
-                <strong>{{ message.sender.username }}:</strong>
-                <p>{{ message.content }}</p>
+                <strong style="margin-top: 0;width: 100%;text-align: left;">{{ message.sender.username }}:</strong>
+                <p style="margin: 0;">{{ message.content }}</p>
+                <div class="msgBtns">
+                    <a href="{% url 'updateMsg' message.id %}">Edit<i class="fa-solid fa-pencil"></i></a>
+                    <a href="{% url 'deleteMsg' message.id %}">Delete<i class="fa-solid fa-trash"></i></a>
+                </div>
 
-                <a href="{% url 'updateMsg' message.id %}">Edit<i class="fa-solid fa-pencil"></i></a>
-                <a href="{% url 'deleteMsg' message.id %}">Delete<i class="fa-solid fa-trash"></i></a>
             </div>
             {% empty %} {% endfor %}
         </div>
