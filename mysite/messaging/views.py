@@ -122,7 +122,8 @@ def room(request, user_id):
     ).order_by('timestamp')
     #find all messages where the sender is either the other user or you and the receiver is either the other user or you
     print('Messages:', messages)
-    socket_url = os.getenv("SOCKET_URL")
+    # socket_url = os.getenv("SOCKET_URL")
+    socket_url = os.getenv("SOCKET_URL", "wss://messagingapp-deploy.onrender.com/ws/some_path/")
     print('socket url' + str(socket_url))
     return render(request, 'messaging/room.html', {'user': user,'messages':messages,'socket_url':socket_url})
 
@@ -156,7 +157,8 @@ def updateMsg(request,msg_id):
       return redirect('/rooms/dashboard')
   else:
     form = MessageForm(instance=msg)
-    socket_url = os.getenv("SOCKET_URL")
+    # socket_url = os.getenv("SOCKET_URL")
+    socket_url = os.getenv("SOCKET_URL", "wss://messagingapp-deploy.onrender.com/ws/some_path/")
   return render(request, 'messaging/edit_message.html', {'form': form, 'message': msg,'socket_url':socket_url})
 
 def deleteMsg(request,msg_id):

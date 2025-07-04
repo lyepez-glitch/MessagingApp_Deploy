@@ -177,6 +177,7 @@ cloudinary.config(
     api_key="714138765989979",
     api_secret= "Irbv5gESfaYehtqZGagLX9KC2OE",
 )
-SOCKET_URL = os.getenv("SOCKET_URL")
+# SOCKET_URL = os.getenv("SOCKET_URL")
+socket_url = os.getenv("SOCKET_URL", "wss://messagingapp-deploy.onrender.com/ws/some_path/")
 # Use Cloudinary for media file storage
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
