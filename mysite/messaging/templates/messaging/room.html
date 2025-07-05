@@ -108,7 +108,9 @@
                     <a href="${deleteUrl}"><i class="fa-solid fa-trash"></i></a>
                 </div>
             `;
-            document.getElementById('messages').appendChild(`<strong>${data.sender_username}:</strong>`);
+            const senderElement = document.createElement('strong');
+            senderElement.innerText = `${data.sender_username}:`;
+            document.getElementById('messages').appendChild(senderElement);
             document.getElementById('messages').appendChild(messageDiv);
             //
             showNotification(data.sender_username, data.content);
