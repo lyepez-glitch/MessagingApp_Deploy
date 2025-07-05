@@ -96,12 +96,14 @@
             const data = JSON.parse(e.data);
             const messageWrap = document.createElement('div');
             const messageDiv = document.createElement('div');
+            const senderUsername = document.createElement('strong');
+            senderUsername.innerText = `${data.sender_username}:`;
             messageDiv.className = 'message';
             console.log('data', data)
             const editUrl = `{% url 'updateMsg' 0 %}`.replace('0', data.message_id); // Placeholder to construct the URL
             const deleteUrl = `{% url 'deleteMsg' 0 %}`.replace('0', data.message_id); // Placeholder to construct the URL
             messageWrap.className = 'messageWrap'
-            messageWrap.appendChild(`<strong>${data.sender_username}<strong>`)
+            messageWrap.appendChild(senderUsername)
 
 
             messageDiv.innerHTML = `
