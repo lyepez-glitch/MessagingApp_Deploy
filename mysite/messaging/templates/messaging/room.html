@@ -34,10 +34,10 @@
         <form id="messageForm" action="{% url 'message' user.id %}" enctype="multipart/form-data">
             {% csrf_token %} {{ form.as_p }}
             <!-- <label style="height: 30px;width:200px;position: absolute;" for="content">Type message here:</label> -->
-            <div id="messagePrompCont">
+            <div id="messagePromptCont">
                 <textarea placeholder="Type your message here..." id="content" name="content" rows="4" cols="50">{{ form.message.value }}</textarea>
-                <br><br>
-                <button type="submit" style="margin-left:130px;">
+
+                <button type="submit" style="">
                 <i class="fa-solid fa-share"></i>
               </button>
             </div>

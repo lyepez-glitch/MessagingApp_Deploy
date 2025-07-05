@@ -1266,7 +1266,7 @@
             height: 50px;
         }
 
-        #messagePromptContainer {
+        #messagePromptCont {
             display: flex;
             gap: 10px;
         }
@@ -1278,11 +1278,11 @@
             border-radius: 20px;
         }
 
-        #messagePromptCont button {
+        #messageForm #messagePromptCont button {
             display: inline;
             height: 20px;
             width: 30px;
-            margin-left: 0;
+            margin-left: 0 !important;
             margin-top: 20px;
         }
 
