@@ -1408,3 +1408,31 @@
             height: auto;
             max-height: 120px;
         }
+
+        .message p {
+            margin: 15px;
+        }
+
+        .msgBtns {
+            align-self: flex-end;
+            margin-right: 15px;
+            display: flex;
+            align-items: flex-end;
+            height: 20px;
+        }
+
+        .msgBtns a {
+            height: 100%;
+        }
+
+        #messagePromptCont textarea {
+            display: flex;
+            align-items: center;
+            padding-top: 50px;
+        }
+
+        #messagePromptCont button {
+            height: 50px;
+            width: 50px;
+            padding-top: 10px;
+        }
