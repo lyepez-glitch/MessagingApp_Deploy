@@ -1495,3 +1495,8 @@
             margin: 0;
             padding: 0;
         }
+
+        .message {
+            width: auto;
+            max-width: 1000px;
+        }
