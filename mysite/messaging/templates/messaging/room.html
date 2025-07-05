@@ -18,8 +18,9 @@
         <div class="msgHeader"></div>
         <div id="messages" class="messages">
             {% for message in messages %}
+            <strong style="margin-top: 0;width: 100%;text-align: left;">{{ message.sender.username }}:</strong>
             <div class="message">
-                <strong style="margin-top: 0;width: 100%;text-align: left;">{{ message.sender.username }}:</strong>
+                <!-- <strong style="margin-top: 0;width: 100%;text-align: left;">{{ message.sender.username }}:</strong> -->
                 <p style="margin: 0;">{{ message.content }}</p>
                 <div class="msgBtns">
                     <a href="{% url 'updateMsg' message.id %}">Edit<i class="fa-solid fa-pencil"></i></a>
@@ -33,12 +34,14 @@
         <form id="messageForm" action="{% url 'message' user.id %}" enctype="multipart/form-data">
             {% csrf_token %} {{ form.as_p }}
             <!-- <label style="height: 30px;width:200px;position: absolute;" for="content">Type message here:</label> -->
-            <textarea placeholder="Type your message here..." id="content" name="content" rows="4" cols="50">{{ form.message.value }}</textarea>
-            <br><br>
-            <i class="fa-solid fa-share"></i>
-            <button type="submit" style="margin-left:130px;">
+            <div id="messagePrompCont">
+                <textarea placeholder="Type your message here..." id="content" name="content" rows="4" cols="50">{{ form.message.value }}</textarea>
+                <br><br>
+                <button type="submit" style="margin-left:130px;">
                 <i class="fa-solid fa-share"></i>
               </button>
+            </div>
+
         </form>
     </div>
 

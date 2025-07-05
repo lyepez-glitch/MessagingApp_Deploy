@@ -1221,6 +1221,11 @@
             /* bottom: 0; */
             width: 100vw;
             border-top: 1px solid lightgray;
+            justify-content: center;
+            gap: 8px;
+            height: 200px;
+            padding: 20px;
+            align-items: center;
         }
 
         #messageForm #content {
@@ -1259,4 +1264,31 @@
         i {
             width: 100px;
             height: 50px;
+        }
+
+        #messagePromptContainer {
+            display: flex;
+            gap: 10px;
+        }
+
+        #messagePromptContainer textarea {
+            margin-bottom: 0;
+            margin-right: 0;
+            margin-left: 0;
+            border-radius: 20px;
+        }
+
+        #messagePromptContainer button {
+            display: inline;
+            /* margin-left: -100px; */
+            height: 20px;
+            width: 30px;
+            /* margin-left: 0; */
+            margin-left: 0;
+            margin-top: 20px;
+        }
+
+        #messagePromptContainer i {
+            width: 20px;
+            height: 20px;
         }
