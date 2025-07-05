@@ -1325,3 +1325,57 @@
         #messageBtnCont a:first-of-type i {
             text-align: right;
         }
+
+        .message {
+            height: auto;
+        }
+
+        .message strong {
+            margin-top: 0;
+            width: 100%;
+            text-align: left;
+        }
+
+        .message p {
+            margin: 0;
+            max-width: 60%;
+            word-wrap: break-word;
+            margin-bottom: 20px;
+        }
+
+        .msgBtns i {
+            width: 5px;
+        }
+
+        #messages strong {
+            width: 100%;
+            text-align: left;
+            margin-top: 0;
+        }
+
+        .message {
+            align-items: center;
+            justify-content: center;
+            /* width: 300px; */
+            height: 300px;
+            max-height: 150px;
+        }
+
+        .message p {
+            margin: 0;
+            /* max-width: 60%; */
+            word-wrap: break-word;
+            margin-bottom: 20px;
+            width: 100%;
+            max-width: 100%;
+            margin-top: 30px;
+        }
+
+        .msgBtns {
+            display: flex;
+            gap: 25px;
+        }
+
+        .msgBtns i {
+            width: 5px;
+        }
