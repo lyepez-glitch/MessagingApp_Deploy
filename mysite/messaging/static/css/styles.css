@@ -1437,7 +1437,7 @@
             padding-top: 10px;
         }
 
-        #messagePromptCont button {
+        #messageForm #messagePromptCont buttons {
             height: 40px;
             width: 50px;
         }
