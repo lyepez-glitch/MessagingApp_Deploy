@@ -101,16 +101,14 @@
             const deleteUrl = `{% url 'deleteMsg' 0 %}`.replace('0', data.message_id); // Placeholder to construct the URL
 
             messageDiv.innerHTML = `
-
+               <strong>${data.sender_username}<strong>
                 <p>${data.content}</p>
                 <div id="messageBtnCont">
                     <a href="${editUrl}"><i class="fa-solid fa-pen"></i></a>
                     <a href="${deleteUrl}"><i class="fa-solid fa-trash"></i></a>
                 </div>
             `;
-            const senderElement = document.createElement('strong');
-            senderElement.innerText = `${data.sender_username}:`;
-            document.getElementById('messages').appendChild(senderElement);
+
             document.getElementById('messages').appendChild(messageDiv);
             //
             showNotification(data.sender_username, data.content);

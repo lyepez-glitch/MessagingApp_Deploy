@@ -1444,8 +1444,37 @@
 
         .message {
             align-items: flex-end;
+            background-color: green;
+            border-radius: 20px;
         }
 
         #messages {
             width: 40% !important;
+        }
+
+        .messageWrap {
+            border: none;
+            background: #f2f4f7;
+        }
+
+        #messages .messageWrap strong {
+            align-self: flex-end;
+            color: black;
+        }
+
+        #messageBtnCont {
+            gap: 20px;
+        }
+
+        #messageBtnCont a:first-of-type {
+            display: flex;
+            justify-content: flex-end;
+            /* align-items: flex-end; */
+            text-decoration: none;
+        }
+
+        #messageBtnCont a:nth-of-type(2) {
+            display: flex;
+            justify-content: flex-end;
+            width: 10px;
         }
