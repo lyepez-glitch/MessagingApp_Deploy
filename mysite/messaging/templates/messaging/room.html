@@ -94,14 +94,18 @@
 
         socket.onmessage = function(e) {
             const data = JSON.parse(e.data);
+            const messageWrap = document.createElement('div');
             const messageDiv = document.createElement('div');
             messageDiv.className = 'message';
             console.log('data', data)
             const editUrl = `{% url 'updateMsg' 0 %}`.replace('0', data.message_id); // Placeholder to construct the URL
             const deleteUrl = `{% url 'deleteMsg' 0 %}`.replace('0', data.message_id); // Placeholder to construct the URL
+            messageWrap.className = 'messageWrap'
+            messageWrap.appendChild(`<strong>${data.sender_username}<strong>`)
+
 
             messageDiv.innerHTML = `
-               <strong>${data.sender_username}<strong>
+
                 <p>${data.content}</p>
                 <div id="messageBtnCont">
                     <a href="${editUrl}"><i class="fa-solid fa-pen"></i></a>
@@ -109,7 +113,9 @@
                 </div>
             `;
 
-            document.getElementById('messages').appendChild(messageDiv);
+            messageWrap.appendChild(messageDiv)
+
+            document.getElementById('messages').appendChild(messageWrap);
             //
             showNotification(data.sender_username, data.content);
         };
