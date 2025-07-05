@@ -1384,7 +1384,27 @@
             flex-wrap: wrap;
             /* height: 60%; */
             overflow-y: none;
-            width: 10%;
+            width: 20% !important;
             margin-right: 10%;
-            margin-top: 5%;
+            margin-top: 50px !important;
+        }
+
+        #messageBtnCont {
+            justify-content: space-around;
+            display: flex;
+            margin-left: 70% 376.203px;
+            gap: 20px;
+        }
+
+        #messageBtnCont a {
+            width: 20px;
+        }
+
+        #messageBtnCont i {
+            width: 20px;
+        }
+
+        .message {
+            height: auto;
+            max-height: 120px;
         }
