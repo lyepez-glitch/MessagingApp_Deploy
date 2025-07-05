@@ -1436,3 +1436,16 @@
             width: 50px;
             padding-top: 10px;
         }
+
+        #messagePromptCont button {
+            height: 40px;
+            width: 50px;
+        }
+
+        .message {
+            align-items: flex-end;
+        }
+
+        #messages {
+            width: 40% !important;
+        }
