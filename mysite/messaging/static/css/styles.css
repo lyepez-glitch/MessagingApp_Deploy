@@ -1271,14 +1271,14 @@
             gap: 10px;
         }
 
-        #messagePromptContainer textarea {
+        #messagePromptCont textarea {
             margin-bottom: 0;
             margin-right: 0;
             margin-left: 0;
             border-radius: 20px;
         }
 
-        #messagePromptContainer button {
+        #messagePromptCont button {
             display: inline;
             /* margin-left: -100px; */
             height: 20px;
@@ -1288,7 +1288,7 @@
             margin-top: 20px;
         }
 
-        #messagePromptContainer i {
+        #messagePromptCont i {
             width: 20px;
             height: 20px;
         }
