@@ -1269,6 +1269,7 @@
         #messagePromptCont {
             display: flex;
             gap: 10px;
+            width: 50%;
         }
 
         #messagePromptCont textarea {
@@ -1276,6 +1277,8 @@
             margin-right: 0;
             margin-left: 0;
             border-radius: 20px;
+            width: 100%;
+            max-width: 100%;
         }
 
         #messageForm #messagePromptCont button {
@@ -1289,4 +1292,36 @@
         #messagePromptCont i {
             width: 20px;
             height: 20px;
+        }
+
+        .message strong {
+            text-align: left;
+            margin-top: 0;
+            width: 100%;
+        }
+
+        .message p {
+            margin-right: 150px;
+            max-width: 60%;
+        }
+
+        #messageBtnCont {
+            justify-content: space-around;
+            display: flex;
+            margin-left: 60px;
+        }
+
+        #messageBtnCont a:first-of-type {
+            height: 20px;
+            width: 50px;
+        }
+
+        #messageBtnCont a:nth-of-type(2) {
+            height: 20px;
+            text-align: right;
+            width: 50px;
+        }
+
+        #messageBtnCont a:first-of-type i {
+            text-align: right;
         }

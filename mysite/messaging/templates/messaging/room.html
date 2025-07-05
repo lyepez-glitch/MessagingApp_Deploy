@@ -101,8 +101,9 @@
             messageDiv.innerHTML = `
                 <strong>${data.sender_username}:</strong>
                 <p>${data.content}</p>
-                <a href="${editUrl}">Edit<i class="fa-solid fa-pen"></i></a>
-                <a href="${deleteUrl}">Delete<i class="fa-solid fa-trash"></i></a>
+                <div id="messageBtnCont"></div>
+                <a href="${editUrl}"><i class="fa-solid fa-pen"></i></a>
+                <a href="${deleteUrl}"><i class="fa-solid fa-trash"></i></a>
             `;
 
             document.getElementById('messages').appendChild(messageDiv);
