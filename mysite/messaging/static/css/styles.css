@@ -1499,6 +1499,7 @@
         .message {
             width: auto;
             max-width: 1000px;
+            margin-top: 0;
         }
 
         #msgContainer {
@@ -1546,3 +1547,9 @@
             justify-content: center;
             font-size: 50px;
         }
+
+        @media (max-width: 480px) {}
+
+        @media (max-width: 768px) {}
+
+        @media (max-width: 1024px) {}
