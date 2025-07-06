@@ -13,14 +13,17 @@
 
 <body>
     <div id="msgContainer">
-        <h1 id="editHeader">Edit Message</h1>
+        <!-- <h1 id="editHeader">Edit Message</h1> -->
         <form id="editForm" method="POST" action="/rooms/rooms/message/edit/{{ message.id }}/">
             {% csrf_token %}
-            <p>
-                <label id="editContent" for="{{ form.content.id_for_label }}">Content:</label>
-                <textarea id="editTextArea" name="content" cols="40" rows="10" required id="{{ form.content.id_for_label }}">{{ form.content.value|default:"" }}</textarea>
-            </p>
-            <input id="submitEdit" type="submit" value="Update">
+
+            <!-- <label id="editContent" for="{{ form.content.id_for_label }}">Content:</label> -->
+            <textarea id="editTextArea" name="content" cols="40" rows="10" required id="{{ form.content.id_for_label }}">{{ form.content.value|default:"" }}</textarea>
+
+            <button id="submitEdit" type="submit" style="width: 100%;">
+                <i class="fa-solid fa-check" style="width: 100%;"></i>
+            </button>
+
         </form>
     </div>
 
