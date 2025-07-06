@@ -1581,6 +1581,18 @@
             .helptext {
                 transform: scale(.7);
             }
+            #whitebar {
+                display: none;
+            }
+            #loginForm {
+                height: 370px;
+            }
+            #userContainer {
+                flex-direction: row;
+            }
+            #messagePromptCont {
+                width: 80%;
+            }
         }
 
         @media (max-width: 768px) {}
