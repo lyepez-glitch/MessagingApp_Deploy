@@ -1684,6 +1684,9 @@
             #loginForm {
                 height: 80vh;
             }
+            #userContainer {
+                flex-direction: row;
+            }
         }
 
         @media (max-width: 1024px) {}
