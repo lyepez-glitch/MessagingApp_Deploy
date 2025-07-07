@@ -1602,6 +1602,21 @@
             #logInHeader {
                 font-size: 20px;
             }
+            #createHdr {
+                font-size: 15px;
+            }
+            .helptext {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            #errs {
+                display: flex;
+                justify-content: center;
+            }
+            #errs ul {
+                font-size: 15px;
+                width: 80%;
+            }
         }
 
         @media (max-width: 768px) {}
