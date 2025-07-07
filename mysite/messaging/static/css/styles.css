@@ -1687,6 +1687,16 @@
             #userContainer {
                 flex-direction: row;
             }
+            #messagePromptCont {
+                width: 80%;
+                margin-left: 50px;
+            }
+            #editForm {
+                transform: scale(.8);
+            }
+            #editTextArea {
+                width: 100%;
+            }
         }
 
         @media (max-width: 1024px) {}
