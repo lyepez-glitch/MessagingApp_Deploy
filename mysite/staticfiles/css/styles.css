@@ -1697,6 +1697,22 @@
             #editTextArea {
                 width: 100%;
             }
+            #profileForm {
+                left: 10%;
+                margin-left: 0;
+                display: flex;
+                width: 120%;
+            }
+            #actualForm {
+                height: 160vh;
+                width: 60%;
+            }
+            #actualForm textarea {
+                padding-top: 25px;
+                width: 80%;
+                padding-bottom: 25px;
+                height: 50px;
+            }
         }
 
         @media (max-width: 1024px) {}
