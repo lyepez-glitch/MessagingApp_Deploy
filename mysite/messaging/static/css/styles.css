@@ -1677,6 +1677,13 @@
             #whitebar {
                 display: none;
             }
+            #logInHeader {
+                font-size: 30px;
+                flex: 1 1 100%;
+            }
+            #loginForm {
+                height: 80vh;
+            }
         }
 
         @media (max-width: 1024px) {}
