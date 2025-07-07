@@ -1623,6 +1623,30 @@
             #editForm {
                 transform: scale(.8);
             }
+            #profileForm {
+                height: 100vh;
+                display: flex;
+                top: 10px !important;
+                margin-top: -60px;
+                position: relative;
+                margin-left: 0;
+                left: 10%;
+            }
+            #actualForm {
+                height: 150vh;
+                width: 80%;
+            }
+            .bioLabel {
+                margin: 0;
+            }
+            #actualForm textarea {
+                width: 60%;
+                padding: 40px;
+                margin-left: 0;
+            }
+            #actualForm br {
+                display: none;
+            }
         }
 
         @media (max-width: 768px) {}
