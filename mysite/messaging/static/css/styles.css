@@ -1657,6 +1657,26 @@
             #homeSignUp {
                 margin-top: 0;
             }
+            #wrapper {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            #signUpHeader {
+                font-size: 25px;
+            }
+            #signUpForm {
+                width: 80%;
+                height: 130vh;
+            }
+            .helptext {
+                transform: scale(.6);
+                margin-bottom: 30px;
+            }
+            #whitebar {
+                display: none;
+            }
         }
 
         @media (max-width: 1024px) {}
