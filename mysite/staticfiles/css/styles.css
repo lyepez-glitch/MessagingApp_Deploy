@@ -1731,4 +1731,9 @@
             #whitebar {
                 display: none;
             }
+            #loginForm {
+                width: 50vw;
+                max-width: 60vw;
+                height: 90vh;
+            }
         }
