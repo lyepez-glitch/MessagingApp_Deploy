@@ -1736,4 +1736,11 @@
                 max-width: 60vw;
                 height: 90vh;
             }
+            #profileForm {
+                margin-left: 0;
+                height: 140vh;
+                width: 100vw;
+                display: flex;
+                justify-content: center;
+            }
         }
