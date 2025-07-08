@@ -1716,4 +1716,19 @@
             }
         }
 
-        @media (max-width: 1024px) {}
+        @media (max-width: 1024px) {
+            .helptext {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            .signUpForm {
+                height: 100%;
+                width: 60vw;
+            }
+            #errs {
+                transform: scale(.5);
+            }
+            #whitebar {
+                display: none;
+            }
+        }
