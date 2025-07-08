@@ -1706,7 +1706,10 @@
             #actualForm {
                 height: 160vh;
                 width: 60%;
-                margin-left: 30px;
+                /* margin-left: 30px; */
+                margin-left: 0;
+                position: absolute;
+                left: 10%;
             }
             #actualForm textarea {
                 padding-top: 25px;
