@@ -1729,10 +1729,6 @@
                 padding-bottom: 25px;
                 height: 50px;
             }
-            #messageWrapper #messages {
-                margin-top: 10% !important;
-                padding-bottom: 30% !important;
-            }
         }
 
         @media (max-width: 1024px) {
@@ -1761,5 +1757,19 @@
                 width: 100vw;
                 display: flex;
                 justify-content: center;
+            }
+        }
+
+        @media(min-width:445px)and(max-width:768px) {
+            #messageWrapper #messages {
+                margin-top: 10% !important;
+                padding-bottom: 30% !important;
+            }
+        }
+
+        @media(max-width:444px) {
+            #messageWrapper #messages {
+                margin-top: 0 !important;
+                padding-bottom: 50% !important;
             }
         }
