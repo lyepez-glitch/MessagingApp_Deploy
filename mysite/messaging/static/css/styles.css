@@ -1555,9 +1555,11 @@
 
         #messageWrapper #messages {
             transform: scale(.7);
-            padding-bottom: 5% !important;
+            /* padding-bottom: 5% !important; */
             margin-top: -10% !important;
             min-width: 400px;
+            padding-top: 10%;
+            padding-bottom: 10%;
         }
 
         @media (max-width: 480px) {
@@ -1781,7 +1783,7 @@
             }
         }
 
-        @media(min-width:445px) and(max-width:1024px) {
+        @media(min-width:445px) and (max-width:1024px) {
             #messageWrapper #messages {
                 padding-bottom: 30% !important;
             }
