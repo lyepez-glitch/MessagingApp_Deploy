@@ -1553,8 +1553,10 @@
             z-index: 9999;
         }
 
-        #messages {
+        #messageWrapper #messages {
+            transform: scale(.9);
             margin-bottom: 300px;
+            margin-top: -50px !important;
         }
 
         @media (max-width: 480px) {
