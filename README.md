@@ -1,109 +1,132 @@
-# Real-Time Chat App
+MessageApp Real-Time Chat Application
 
-A web-based chat application built using Django, Django Channels, WebSockets, HTML, and CSS. This app allows multiple users to communicate in real time.
+A full-stack chat application built with Django, Django Channels, and WebSockets. Users can sign up, log in, edit profiles, browse other users, and engage in real-time messaging using modern frontend technologies (HTML, CSS, JavaScript).
 
-## Table of Contents
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Setup and Installation](#setup-and-installation)
-- [Usage](#usage)
-- [Folder Structure](#folder-structure)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
+Features
 
----
+User Authentication: Secure sign-up, login, and logout.
 
-## Features
-- **Real-Time Communication**: Instant messaging using WebSockets for real-time updates.
-- **User Authentication**: Sign up, log in, and log out functionality.
-- **Multiple Chat Rooms**: Users can create and join different chat rooms.
-- **Message History**: Persistent message storage, allowing users to view previous conversations.
-- **Responsive Design**: Optimized for both desktop and mobile view.
+Profile Management: Update personal information and profile picture (Cloudinary integration).
 
-## Tech Stack
-- **Backend**: Django, Django Channels
-- **Frontend**: HTML, CSS, JavaScript
-- **Database**: SQLite (or PostgreSQL in production)
-- **WebSockets**: Django Channels and Redis as the channel layer (for production)
-- **Asynchronous Framework**: ASGI
+User Directory: View a list of registered users and their basic info.
 
-## Setup and Installation
+Real-Time Chat: Send and receive messages instantly via WebSockets (Django Channels + Daphne).
 
-### Prerequisites
-- Python 3.7+
-- Redis (for channel layer in production)
+Message Editing: Edit or delete past messages in real time.
 
-### Installation Steps
+Responsive Design: Mobile-first styling with fluid layouts.
 
-1. **Clone the repository**
-    ```bash
-    git clone https://github.com/your-username/real-time-chat-app.git
-    cd real-time-chat-app
-    ```
+Deployment: Hosted on Render with CI/CD for seamless updates.
 
-2. **Create a virtual environment**
-    ```bash
-    python3 -m venv venv
-    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-    ```
+Tech Stack
 
-3. **Install dependencies**
-    ```bash
-    pip install -r requirements.txt
-    ```
+Backend: Django 5.1.1, Django Channels 4.1
 
-4. **Configure environment variables**
-    - Create a `.env` file in the project root and add the necessary configurations (e.g., `SECRET_KEY`, `DEBUG`).
-    - Ensure Redis is running on your local machine or update the channel layer configuration with your Redis server URL.
+ASGI Server: Daphne
 
-5. **Apply migrations**
-    ```bash
-    python manage.py migrate
-    ```
+Database: SQLite (development), PostgreSQL optional in production
 
-6. **Create a superuser**
-    ```bash
-    python manage.py createsuperuser
-    ```
+Storage: Cloudinary (media files)
 
-7. **Run the development server**
-    ```bash
-    python manage.py runserver
-    ```
+WebSockets: Redis channel layer (In-memory for quick dev) via channels.layers.InMemoryChannelLayer
 
-8. **Visit the app**
-    Open your browser and go to `http://127.0.0.1:8000/` to access the chat app.
+Frontend: HTML5, CSS3, JavaScript, Font Awesome icons
 
-## Usage
-1. **Sign Up/Login**: Create an account or log in to an existing one.
-2. **Create or Join a Chat Room**: Browse existing chat rooms or create a new one.
-3. **Start Chatting**: Type messages to chat in real-time with other users in the room.
+Deployment: Render.com with whitenoise for static
 
-## Folder Structure
+Getting Started
 
-```plaintext
-mysite/
-├── messaging/                  # Django app for the chat functionality
-│   ├── templates/         # HTML templates
-│   ├── static/            # Static files (CSS, JS)
-│   ├── consumers.py       # WebSocket consumers for handling real-time events
-│   ├── routing.py         # Channels routing configuration
-│   └── views.py           # Views for rendering chat pages
-├── config/
-│   ├── settings.py        # Django project settings
-│   ├── asgi.py            # ASGI config for Django Channels
-│   └── urls.py            # Project URL configuration
-├── manage.py
+Prerequisites
+
+Python 3.10+
+
+Git
+
+(Optional) Redis for production WebSocket channel layer
+
+Installation
+
+Clone the repository:
+
+git clone https://github.com/your-username/MessagingApp_Deploy.git
+cd MessagingApp_Deploy/mysite
+
+Create & activate virtual environment:
+
+python -m venv venv
+source venv/bin/activate  # Windows: venv\Scripts\activate
+
+Install dependencies:
+
+pip install -r ../requirements.txt
+
+Environment variables:
+
+Copy .env.example to .env
+
+Set:
+
+SECRET_KEY=<your_django_secret>
+DEBUG=True
+CLOUDINARY_URL=...
+SOCKET_URL=ws://localhost:8000/ws/chat/<room_id>/
+
+Apply migrations & collect static:
+
+python manage.py migrate
+python manage.py collectstatic --noinput
+
+Run development server:
+
+daphne mysite.asgi:application --port 8000 --bind 0.0.0.0
+
+Open the app:
+Visit http://localhost:8000/rooms/ in your browser.
+
+Project Structure
+
+MessagingApp_Deploy/
+├── mysite/                    # Django project
+│   ├── messaging/             # Chat app
+│   │   ├── consumers.py       # WebSocket consumers
+│   │   ├── routing.py         # Channels routing
+│   │   ├── templates/         # HTML templates
+│   │   ├── static/            # Static assets (css, js, images)
+│   │   └── views.py           # View functions
+│   ├── config/                # Settings and ASGI/Wsgi
+│   ├── manage.py
+│   └── requirements.txt       # Dependencies
 └── README.md
 
+Environment & Deployment
 
+Static Files: Served by whitenoise in production
 
-Steps to Contribute
-Fork the project.
-Create a feature branch: git checkout -b feature-name
-Commit your changes: git commit -m 'Add feature name'
-Push to the branch: git push origin feature-name
-Open a pull request.
+Media Files: Managed by Cloudinary via DEFAULT_FILE_STORAGE
 
+WebSocket URL: Configurable via SOCKET_URL env var
+
+Render.com: Automatic build & deploy with the following commands:
+
+Build: pip install -r requirements.txt && pip install cloudinary django-storages && cd mysite && python manage.py collectstatic --noinput && python manage.py migrate
+
+Start: cd mysite && daphne mysite.asgi:application --port $PORT --bind 0.0.0.0
+
+Contributing
+
+Fork the repo.
+
+Create a feature branch: git checkout -b feature/YourFeature
+
+Commit changes: git commit -m "Add YourFeature"
+
+Push to branch: git push origin feature/YourFeature
+
+Open a Pull Request.
+
+License
+
+Distributed under the MIT License. See LICENSE for details.
+
+Made with ❤️ by Lucas Yepez for secure, scalable, real-time communication.
 
