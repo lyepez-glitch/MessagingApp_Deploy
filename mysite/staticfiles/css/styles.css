@@ -1217,8 +1217,8 @@
             /* justify-content: center; */
             display: flex;
             flex-direction: column;
-            /* position: fixed;
-            bottom: 0; */
+            position: fixed;
+            bottom: 0;
             width: 100vw;
             border-top: 1px solid lightgray;
             justify-content: center;
@@ -1554,7 +1554,8 @@
         }
 
         #messageWrapper #messages {
-            transform: scale(.9);
+            transform: scale(.7);
+            margin-top: -150px !important;
             /* margin-bottom: 300px; */
             /* margin-top: -50px !important; */
             /* margin-top: 300px !important; */
