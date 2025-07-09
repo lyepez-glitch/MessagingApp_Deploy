@@ -1772,24 +1772,25 @@
         @media(max-width:444px) {
             #messageWrapper #messages {
                 margin-top: 0 !important;
-                padding-bottom: 50% !important;
+                padding-bottom: 80% !important;
             }
         }
 
         @media(min-width:1025px) {
             #messageWrapper #messages {
-                padding-bottom: 10% !important;
-                margin-top: -60px !important;
+                padding-bottom: 30% !important;
+                padding-bottom: 30% !important;
             }
         }
 
         @media(min-width:445px) and (max-width:1024px) {
             #messageWrapper #messages {
-                padding-bottom: 30% !important;
+                padding-bottom: 60% !important;
+                padding-top: 30% !important;
             }
         }
 
         #messageWrapper #messages {
-            padding-top: 20% !important;
-            padding-bottom: 20% !important;
+            padding-top: 20%;
+            padding-bottom: 20%;
         }
