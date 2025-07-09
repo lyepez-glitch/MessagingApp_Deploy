@@ -1556,6 +1556,7 @@
         #messageWrapper #messages {
             transform: scale(.7);
             margin-top: -100px !important;
+            padding-bottom: 100px;
             /* margin-bottom: 300px; */
             /* margin-top: -50px !important; */
             /* margin-top: 300px !important; */
