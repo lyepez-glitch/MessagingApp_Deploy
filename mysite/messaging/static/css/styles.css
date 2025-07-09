@@ -1555,12 +1555,8 @@
 
         #messageWrapper #messages {
             transform: scale(.7);
-            margin-top: -100px !important;
-            padding-bottom: 100px;
-            /* margin-bottom: 300px; */
-            /* margin-top: -50px !important; */
-            /* margin-top: 300px !important; */
-            /* justify-content:flex-end; */
+            padding-bottom: 5% !important;
+            margin-top: -10% !important;
         }
 
         @media (max-width: 480px) {
