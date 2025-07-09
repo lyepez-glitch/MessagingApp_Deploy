@@ -1217,8 +1217,8 @@
             /* justify-content: center; */
             display: flex;
             flex-direction: column;
-            position: fixed;
-            bottom: 0;
+            /* position: fixed;
+            bottom: 0; */
             width: 100vw;
             border-top: 1px solid lightgray;
             justify-content: center;
@@ -1557,8 +1557,8 @@
             transform: scale(.9);
             /* margin-bottom: 300px; */
             /* margin-top: -50px !important; */
-            height: 100%;
-            margin-top: 300px !important;
+            /* margin-top: 300px !important; */
+            /* justify-content:flex-end; */
         }
 
         @media (max-width: 480px) {
